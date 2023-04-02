@@ -85,8 +85,6 @@ export default function ClientHome() {
     { id: 3, name: "Bob Johnson", email: "bob.johnson@example.com" },
   ];
 
-  // <Table data={departmentData} columns={columns} />
-
   return (
     <section id="client-cont">
       <ClientBar />

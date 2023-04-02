@@ -1,7 +1,7 @@
 #client-profile {
   width: 95%;
   height: 100%;
-  margin-left: 5%;
+  /* margin-left: 5%; */
 }
 
 #client-profile-1 {
@@ -51,7 +51,7 @@
 }
 
 #client-profile-1 > form > button {
-  width: fit-content;
+  width: max-content;
   padding: 4px 8px;
   margin-top: 1rem;
   background-color: var(--tertiary-color);

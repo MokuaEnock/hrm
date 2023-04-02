@@ -28,7 +28,7 @@ let data = [
 
 export default function ClientSignup() {
   return (
-    <section id="client-cont">
+    <section id="client-cont-signup">
       <ClientBar />
       <section id="client-signup">
         <ClientHeader message="Its payday approve payments" />
