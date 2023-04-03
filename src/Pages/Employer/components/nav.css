@@ -1,7 +1,6 @@
 #employer-nav {
   width: 5%;
   height: 100%;
-  border: thin solid black;
   background-color: var(--tertiary-color);
   display: flex;
   flex-direction: column;
@@ -15,6 +14,7 @@
 }
 
 #employer-nav-head {
+  color: var(--primary-color);
   display: flex;
   flex-direction: column;
   align-items: center;

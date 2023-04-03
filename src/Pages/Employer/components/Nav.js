@@ -8,8 +8,8 @@ export default function EmployerNav() {
       <span id="employer-nav-body">
         <Link to="/employer/apps">Home</Link>
         <Link to="/employer/home">Dashboard</Link>
-        <Link to="/employer/home">Money</Link>
-        <Link to="/employer/home">Profile</Link>
+        <Link to="/employer/money">Money</Link>
+        <Link to="/employer/profile">Profile</Link>
       </span>
       <span id="employer-nav-foot">
         <Link to="/">Logout</Link>
