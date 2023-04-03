@@ -26,6 +26,7 @@ import DepartmentPay from "./Pages/client/signup/department";
 import EmployerHome from "./Pages/Employer/Home/home";
 import EmployerApps from "./Pages/Employer/Apps/apps";
 import EmployerEmployees from "./Pages/Employer/Employees/employees";
+import EmployerMoney from "./Pages/Employer/Money/money";
 
 function App() {
   return (
@@ -74,6 +75,7 @@ function App() {
           <Route path="home" element={<EmployerHome />} />
           <Route path="apps" element={<EmployerApps />} />
           <Route path="employees" element={<EmployerEmployees />} />
+          <Route path="money" element={<EmployerMoney />} />
         </Route>
       </Routes>
     </BrowserRouter>
