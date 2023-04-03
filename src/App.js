@@ -27,6 +27,7 @@ import EmployerHome from "./Pages/Employer/Home/home";
 import EmployerApps from "./Pages/Employer/Apps/apps";
 import EmployerEmployees from "./Pages/Employer/Employees/employees";
 import EmployerMoney from "./Pages/Employer/Money/money";
+import EmployerDept from "./Pages/Employer/Money/dept";
 
 function App() {
   return (
@@ -76,6 +77,7 @@ function App() {
           <Route path="apps" element={<EmployerApps />} />
           <Route path="employees" element={<EmployerEmployees />} />
           <Route path="money" element={<EmployerMoney />} />
+          <Route path="money/department/:id" element={<EmployerDept />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -39,7 +39,7 @@ export default function EmployerMoney() {
               <Link
                 className="payment-list"
                 key={department.department_id}
-                to={`/client/signup/${department.department_id}`}
+                to={`/employer/money/department/${department.department_id}`}
               >
                 <span className="payment-list-head">
                   {department.department_id}

@@ -2,6 +2,7 @@ import "./dept.css";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import EmployerNav from "../components/Nav";
+import EmployerHead from "../components/head";
 
 export default function EmployerDept() {
   let { id } = useParams();
@@ -50,6 +51,7 @@ export default function EmployerDept() {
     <section className="employer-container">
       <EmployerNav />
       <section id="employer-money-cont">
+        <EmployerHead message={"Welcome to the Engineering department"} />
         <div id="client-payment-cont1">
           <h4>Engineering department</h4>
           <div id="client-payment-cont-1-1">
