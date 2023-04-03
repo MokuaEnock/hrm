@@ -20,10 +20,10 @@ import { MemberDetail } from "./Pages/department/members/detail";
 import DepartmentApps from "./Pages/department/apps/app";
 import DepartmentProfile from "./Pages/department/profile/profile";
 
-import ClientApprovals from './Pages/client/ClientApprovals/ClientApprovals'
+import ClientApprovals from "./Pages/client/ClientApprovals/ClientApprovals";
 
 import DepartmentPay from "./Pages/client/signup/department";
-
+import EmployerHome from "./Pages/Employer/Home/home";
 
 function App() {
   return (
@@ -66,6 +66,10 @@ function App() {
           <Route path="money" element={<EmployeeMoney />} />
           <Route path="schedule" element={<EmployeeSchedule />} />
           <Route path="profile" element={<EmployeeEditProfile />} />
+        </Route>
+
+        <Route path="employer">
+          <Route path="home" element={<EmployerHome />} />
         </Route>
       </Routes>
     </BrowserRouter>

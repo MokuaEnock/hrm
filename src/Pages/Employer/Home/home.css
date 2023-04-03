@@ -1,0 +1,11 @@
+.employer-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.employer-container > * {
+  border: thin solid black;
+}
