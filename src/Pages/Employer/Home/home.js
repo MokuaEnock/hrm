@@ -1,7 +1,8 @@
+import React from "react";
+
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import "./home.css";
-
 import { RiArrowUpSLine } from "react-icons/ri";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { Pie } from "@nivo/pie";
@@ -16,7 +17,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -81,6 +81,7 @@ export default function EmployerHome() {
     { id: 2, name: "Jane Smith", email: "jane.smith@example.com" },
     { id: 3, name: "Bob Johnson", email: "bob.johnson@example.com" },
   ];
+
   return (
     <section className="employer-container">
       <EmployerNav />
