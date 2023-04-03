@@ -3,7 +3,7 @@ import EmployerHead from "../components/head";
 import "./apps.css";
 import { Link } from "react-router-dom";
 import {
-  FaDashboard,
+  FaChartArea,
   FaMoneyBillAlt,
   FaUserCircle,
   FaUsers,
@@ -17,7 +17,7 @@ export default function EmployerApps() {
         <EmployerHead message={"Where would you like to navigate to?"} />
         <div id="employer-apps-cont">
           <Link to="/employer/home">
-            <span>{/* <FaDashboard /> */}</span>
+            <span><FaChartArea /></span>
             <p>Dashboard</p>
           </Link>
 

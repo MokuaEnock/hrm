@@ -108,6 +108,7 @@ export default function ClientProfile() {
             </span>
             <button type='submit'>Update details</button>
           </form>
+          
         </section>
       </section>
     </section>
