@@ -1,5 +1,98 @@
 #employer-money-cont {
   width: 95%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
+#client-payment-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: thin solid lightgrey;
+  height: 90%;
+  width: 100%;
+}
+
+#client-payment-cont > * {
+  height: 100%;
+  border: thin solid lightgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#client-payment-cont1 {
+  justify-content: flex-start;
+  width: 70%;
+}
+
+#client-payment-cont1 > h3 {
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  flex-direction: column;
+  font-weight: lighter;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--tertiary-color);
+}
+
+#client-payment-cont2 {
+  justify-content: space-between;
+  width: 30%;
+  background-color: var(--tertiary-color);
+  border: none;
+}
+
+.payment-list {
+  width: 95%;
+  border: thin solid var(--tertiary-color);
+  cursor: pointer;
+  border-radius: 4px;
+  height: 12vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.payment-list > * {
+  height: 100%;
+}
+
+.payment-list-head {
+  width: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--primary-color);
+  background-color: var(--tertiary-color);
+}
+
+.payment-list-body {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.payment-list-buttons {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1rem;
+  color: var(--tertiary-color);
+}
