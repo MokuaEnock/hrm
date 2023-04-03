@@ -86,7 +86,7 @@ export default function ClientHome() {
   ];
 
   return (
-    <section id="client-cont">
+    <section id="client-cont-home">
       <ClientBar />
       <section id="client-home">
         <ClientHeader message="Here is a breakdown of your organisation." />
@@ -114,7 +114,6 @@ export default function ClientHome() {
             </span>
           </span>
 
-          <button onClick={handleSearch}>Submit</button>
           <span className="client-home-employees">
             <p>Total attendance</p>
             <span>
@@ -154,8 +153,8 @@ export default function ClientHome() {
             <p className="client-home-chart-title">Gender balance</p>
             <div>
               <Pie
-                width={400}
-                height={400}
+                width={300}
+                height={300}
                 data={data}
                 margin={{
                   top: 40,

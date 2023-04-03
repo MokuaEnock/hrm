@@ -1,14 +1,13 @@
 #client-profile {
   width: 95%;
   height: 100%;
-  /* margin-left: 5%; */
 }
 
 #client-profile-1 {
   width: 95%;
   height: 90%;
   margin-left: 1%;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .client-profile-head {

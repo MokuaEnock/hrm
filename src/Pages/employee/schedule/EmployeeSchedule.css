@@ -100,7 +100,7 @@
 }
 
 .employee-schedule button {
-  width: fit-content;
+  width: max-content;
   padding: 4px 10px;
   margin-top: 1rem;
   background-color: var(--tertiary-color);

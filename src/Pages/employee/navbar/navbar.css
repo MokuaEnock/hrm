@@ -31,19 +31,18 @@
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: fit-content;
+  width: max-content;
   background-color: var(--tertiary-color);
   color: #fff;
   text-align: center;
   border-radius: 0 1rem 1rem 0;
   padding: 5px 1rem;
-  
+
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
 }
 .tooltiptext {
-
   font-size: 1rem;
   /* border: 1px solid red; */
   margin-left: 3vw;
