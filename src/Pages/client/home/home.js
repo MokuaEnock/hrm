@@ -1,8 +1,6 @@
 import ClientBar from "../navbar/navbar";
 import React from "react";
 
-import Table from "../../department/members/table";
-
 import "./home.css";
 import ClientHeader from "./header";
 import { RiArrowUpSLine } from "react-icons/ri";
