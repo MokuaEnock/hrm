@@ -21,21 +21,21 @@ export default function EmployerApps() {
             <p>Dashboard</p>
           </Link>
 
-          <Link to="/employer/home">
+          <Link to="/employer/money">
             <span>
               <FaMoneyBillAlt />
             </span>
             <p>Payroll</p>
           </Link>
 
-          <Link to="/employer/home">
+          <Link to="/employer/profile">
             <span>
               <FaUserCircle />
             </span>
             <p>Profile</p>
           </Link>
 
-          <Link to="/employer/home">
+          <Link to="/employer/employees">
             <span>
               <FaUsers />
             </span>

@@ -25,6 +25,7 @@ export default function EmployerHead({ message }) {
         <Link to="/client/messages" className="notifications">
           <FaComment />
         </Link>
+        
       </span>
     </header>
   );
