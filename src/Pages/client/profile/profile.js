@@ -29,7 +29,7 @@ export default function ClientProfile() {
                 />
               </section>
               <section>
-                <label>Organisation's Deccription</label>
+                <label>Organisation's Description</label>
                 <input
                   type='text'
                   placeholder='Organisations brief description'
