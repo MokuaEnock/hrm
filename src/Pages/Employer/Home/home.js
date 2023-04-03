@@ -8,6 +8,7 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import { Pie } from "@nivo/pie";
 import { ThemeProvider, SvgWrapper } from "@nivo/core";
 import { Bar } from "react-chartjs-2";
+import LineChart from "./line";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -19,6 +20,7 @@ import {
 } from "chart.js";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import LineChartComponent from "./line";
 
 ChartJS.register(
   CategoryScale,
@@ -164,7 +166,6 @@ export default function EmployerHome() {
                 borderColor="inherit:darker(0.6)"
                 className="nivo-pie"
               />
-
               <ThemeProvider>
                 <SvgWrapper
                   height={100}
@@ -172,13 +173,14 @@ export default function EmployerHome() {
                   margin={{ left: 0, right: 0, top: 0, bottom: 0 }}
                 ></SvgWrapper>
               </ThemeProvider>
+              {/* <LineChartComponent /> */}
             </div>
           </div>
         </div>
 
         <div id="client-home-emps">
           <div id="client-home-emps-header">
-            <h3>Employee Status</h3>
+            <h3>Employees</h3>
             <form id="client-home-emps-form">
               <FaSearch />
               <input type="text" placeholder="search" />
@@ -200,7 +202,7 @@ export default function EmployerHome() {
             className="client-home-emps-child"
           >
             <span className="client-home-emps-number">22</span>
-            <span className="client-home-emps-name">Enock MOkua</span>
+            <span className="client-home-emps-name">Enock Mokua</span>
             <span className="client-home-emps-sex">Male</span>
             <span className="client-home-emps-days">123</span>
             <span className="client-home-emps-missed">9</span>
