@@ -24,6 +24,7 @@ import ClientApprovals from "./Pages/client/ClientApprovals/ClientApprovals";
 
 import DepartmentPay from "./Pages/client/signup/department";
 import EmployerHome from "./Pages/Employer/Home/home";
+import EmployerApps from "./Pages/Employer/Apps/apps";
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
 
         <Route path="employer">
           <Route path="home" element={<EmployerHome />} />
+          <Route path="apps" element={<EmployerApps />} />
         </Route>
       </Routes>
     </BrowserRouter>
