@@ -46,6 +46,7 @@ export default function DepartmentPay() {
   const handleStartDateChange = (event) => {
     setStartDate(event.target.value);
   };
+  
   return (
     <section id="client-cont">
       <ClientBar />
