@@ -20,6 +20,11 @@ export default function Login() {
           <h4>Login Into your Account</h4>
           <input type="text" placeholder="Email Address" />
           <input type="text" placeholder="Password" />
+          <select>
+            <option>Employer</option>
+            <option>Department</option>
+            <option>Employee</option>
+          </select>
           <button type="submit" onClick={handleLogin}>
             Login
           </button>
