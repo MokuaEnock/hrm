@@ -80,6 +80,7 @@
 #department-employees {
   width: 100%;
   height: max-content;
+  overflow-y: scroll;
 }
 
 #department-employees-header {
@@ -94,5 +95,27 @@
 
 #department-employees-header > * {
   font-size: 0.8rem;
+  text-align: center;
+  width: 20%;
   color: var(--tertiary-color);
+}
+
+.department-employees-list {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.department-employees-list > * {
+  width: 13%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--tertiary-color);
+}
+
+#department-employees > :nth-child(even) {
+  background-color: #f2f2f2;
 }

@@ -136,17 +136,29 @@ export default function DepartmentMembers() {
           </span>
         </form>
         <h3>Statistics this month</h3>
+        <div id="department-employees-header">
+          <span>Employee No.</span>
+          <span>Name</span>
+          <span>Email</span>
+          <span>Age</span>
+          <span>Gender</span>
+          <span>Role</span>
+          <span>Days Present</span>
+          <span>Days Absent</span>
+        </div>
         <section id="department-employees">
-          <div id="department-employees-header">
-            <span>Employee No.</span>
-            <span>Name</span>
-            <span>Email</span>
-            <span>Age</span>
-            <span>Gender</span>
-            <span>Role</span>
-            <span>Days Present</span>
-            <span>Days Absent</span>
-          </div>
+          {users.map((user) => (
+            <div key={user.id} className="department-employees-list">
+              <span>{user.employeeNumber}</span>
+              <span>{user.name}</span>
+              <span>{user.email}</span>
+              <span>{user.age}</span>
+              <span>{user.gender}</span>
+              <span>{user.employeeRole}</span>
+              <span>{user.daysPresent}</span>
+              <span>{user.daysAbsent}</span>
+            </div>
+          ))}
         </section>
 
         {/* <Table data={users} columns={columns} /> */}
