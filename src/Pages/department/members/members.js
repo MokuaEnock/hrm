@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import DepartmentHeader from "../header/header";
 import DepartmentNav from "../navbar/navbar";
 import "./embers.css";
@@ -148,7 +149,11 @@ export default function DepartmentMembers() {
         </div>
         <section id="department-employees">
           {users.map((user) => (
-            <div key={user.id} className="department-employees-list">
+            <Link
+              to={`/department/members/${user.id}`}
+              key={user.id}
+              className="department-employees-list"
+            >
               <span>{user.employeeNumber}</span>
               <span>{user.name}</span>
               <span>{user.email}</span>
@@ -157,7 +162,7 @@ export default function DepartmentMembers() {
               <span>{user.employeeRole}</span>
               <span>{user.daysPresent}</span>
               <span>{user.daysAbsent}</span>
-            </div>
+            </Link>
           ))}
         </section>
 
