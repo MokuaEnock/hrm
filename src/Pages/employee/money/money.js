@@ -70,17 +70,75 @@ export default function EmployeeMoney() {
     ],
   };
 
-  const employee = {
-    name: "John Smith",
-    earnings: [
-      { description: "Salary", amount: 5000 },
-      { description: "Bonus", amount: 1000 },
-    ],
-    deductions: [
-      { description: "Tax", amount: 1000 },
-      { description: "Insurance", amount: 500 },
-    ],
-  };
+  const employee = [
+    {
+      payslip: {
+        id: 2,
+        employee_id: 2,
+        start_date: "2023-01-29",
+        end_date: "2023-02-11",
+        nhif: "400.0",
+        nssf: "200.0",
+        paye: "1026.4",
+        taxable_income: "10264.0",
+        payslip_period: 14,
+        gross_salary: 10864,
+        net_salary: 9237,
+        created_at: "2023-04-04T16:33:47.276Z",
+        updated_at: "2023-04-04T16:33:47.276Z",
+      },
+      attendance_data: {
+        dates: [
+          "2023-01-29",
+          "2023-01-30",
+          "2023-01-31",
+          "2023-02-01",
+          "2023-02-02",
+          "2023-02-03",
+          "2023-02-04",
+          "2023-02-05",
+          "2023-02-06",
+          "2023-02-07",
+          "2023-02-08",
+          "2023-02-09",
+          "2023-02-10",
+          "2023-02-11",
+        ],
+        hours_worked: [
+          0,
+          "9.0",
+          "8.0",
+          "8.0",
+          "10.0",
+          "9.0",
+          "16.0",
+          0,
+          "9.0",
+          "10.0",
+          "7.0",
+          "8.0",
+          "10.0",
+          "20.0",
+        ],
+        pay: [
+          0,
+          "776.0",
+          "776.0",
+          "776.0",
+          "776.0",
+          "776.0",
+          "1552.0",
+          0,
+          "776.0",
+          "776.0",
+          "776.0",
+          "776.0",
+          "776.0",
+          "1552.0",
+        ],
+      },
+    },
+  ];
 
   return (
     <section id="employee-cont">
@@ -138,12 +196,6 @@ export default function EmployeeMoney() {
         </div>
       </section>
       <aside id="employee-payroll">
-        {/* <button id='button-payslip'>
-          <FaDownload />
-          <p>Download Payslip</p>
-          <Payslip employee={employee} />
-        </button> */}
-
         <button id="button-payslip">
           <Payslip employee={employee} />
         </button>

@@ -8,55 +8,49 @@ export default function Payslip({ employee }) {
   let generatePayslip = () => {
     let doc = new jsPDF("landscape");
     doc.setFontSize(14);
-    doc.text(`Payslip for ${employee.name}`, 10, 10, { fontWeight: "bold" });
-    doc.setFontSize(12);
-    doc.text("Earnings", 10, 20, { fontWeight: "bold" });
-    const earningsData = employee.earnings.map((e) => [
-      e.description,
-      e.amount,
-    ]);
+
+    // add employee data table
+    let employeeData = [
+      ["Employee ID", employee.id],
+      ["Name", employee.name],
+      ["Department", employee.department],
+      ["Designation", employee.designation],
+      ["Start Date", employee.start_date],
+      ["End Date", employee.end_date],
+      ["Gross Salary", employee.gross_salary],
+      ["NHIF", employee.nhif],
+      ["NSSF", employee.nssf],
+      ["PAYE", employee.paye],
+      ["Net Salary", employee.net_salary],
+    ];
+    doc.text("Employee Data", 10, 20);
     doc.autoTable({
       startY: 25,
-      head: [["Description", "Amount"]],
-      body: earningsData,
+      headStyles: { fillColor: [41, 128, 185], textColor: 255, fontSize: 12 },
+      body: employeeData,
     });
-    doc.text("Deductions", 10, doc.autoTable.previous.finalY + 10, {
-      fontWeight: "bold",
-    });
-    const deductionsData = employee.deductions.map((d) => [
-      d.description,
-      d.amount,
-    ]);
+
+    // add attendance data table
+    let attendanceData = [
+      ["Date", ...employee.attendance_data.dates],
+      ["Hours Worked", ...employee.attendance_data.hours_worked],
+      ["Pay", ...employee.attendance_data.pay],
+    ];
+    doc.text("Attendance Data", 10, doc.autoTable.previous.finalY + 10);
     doc.autoTable({
-      startY: doc.autoTable.previous.finalY + 20,
-      head: [["Description", "Amount"]],
-      body: deductionsData,
+      startY: doc.autoTable.previous.finalY + 15,
+      headStyles: { fillColor: [41, 128, 185], textColor: 255, fontSize: 12 },
+      bodyStyles: { fontSize: 10 },
+      body: attendanceData,
     });
-    // Open the generated PDF in a separate browser tab
+
     doc.output("dataurlnewwindow");
   };
 
   return (
-    <button
-      onClick={generatePayslip}
-      style={{
-        fontSize: "1rem",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        width: "60%",
-        padding: "4px 10px",
-        backgroundColor: "#024751",
-        color: "white",
-        justifyContent: "space-between",
-        borderRadius: "4px",
-        border: "1px solid #024751",
-      }}
-    >
+    <button onClick={generatePayslip}>
       <FaDownload style={{ height: "100%", fontSize: "1.5rem" }} />
-      <span>
-        Download <br /> Payslip
-      </span>
+      <span>Download Payslip</span>
     </button>
   );
 }
