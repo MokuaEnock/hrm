@@ -62,5 +62,37 @@
   background-color: var(--tertiary-color);
   color: white;
   width: 15%;
+}
 
+#department-member > h3 {
+  width: 100%;
+  height: 5vh;
+  font-size: 1.5rem;
+  color: var(--tertiary-color);
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#department-employees {
+  width: 100%;
+  height: max-content;
+}
+
+#department-employees-header {
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+#department-employees-header > * {
+  font-size: 0.8rem;
+  color: var(--tertiary-color);
 }
