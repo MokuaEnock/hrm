@@ -6,9 +6,11 @@ import { FaDownload } from "react-icons/fa";
 
 export default function Payslip({ employee }) {
   let generatePayslip = () => {
-    let doc = new jsPDF();
-    doc.text(`Payslip for ${employee.name}`, 10, 10);
-    doc.text("Earnings", 10, 20);
+    let doc = new jsPDF("landscape");
+    doc.setFontSize(14);
+    doc.text(`Payslip for ${employee.name}`, 10, 10, { fontWeight: "bold" });
+    doc.setFontSize(12);
+    doc.text("Earnings", 10, 20, { fontWeight: "bold" });
     const earningsData = employee.earnings.map((e) => [
       e.description,
       e.amount,
@@ -18,7 +20,9 @@ export default function Payslip({ employee }) {
       head: [["Description", "Amount"]],
       body: earningsData,
     });
-    doc.text("Deductions", 10, doc.autoTable.previous.finalY + 10);
+    doc.text("Deductions", 10, doc.autoTable.previous.finalY + 10, {
+      fontWeight: "bold",
+    });
     const deductionsData = employee.deductions.map((d) => [
       d.description,
       d.amount,
@@ -31,7 +35,7 @@ export default function Payslip({ employee }) {
     // Open the generated PDF in a separate browser tab
     doc.output("dataurlnewwindow");
   };
-  
+
   return (
     <button
       onClick={generatePayslip}

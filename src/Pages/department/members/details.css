@@ -6,6 +6,11 @@
   overflow-y: scroll;
 }
 
+#departent-member {
+  width: 95vw;
+  height: 100vh;
+}
+
 .member-cont > section {
   border: thin solid black;
   width: 100%;
@@ -219,4 +224,3 @@ textarea:focus {
   border: thin solid black;
   border-radius: 4px;
 }
-
