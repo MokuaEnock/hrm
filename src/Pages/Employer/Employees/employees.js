@@ -318,6 +318,43 @@ export default function EmployerEmployees() {
             </label>
           </div>
 
+          <span className="client-money-section3-head">
+            <h4>Sacco details</h4>
+            <p>Add the employees sacco details if any</p>
+          </span>
+
+          <div>
+            <label>
+              <p>Sacco Name</p>
+              <input type="text" placeholder="Sacco name" />
+            </label>
+
+            <label>
+              <p>Sacco registration number</p>
+              <input type="text" placeholder="Registration number" />
+            </label>
+
+            <label>
+              <p>Sacco membership number</p>
+              <input type="text" placeholder="Membership Number" />
+            </label>
+
+            <label>
+              <p>Contribution Amount</p>
+              <input type="number" placeholder="Contribution amount" />
+            </label>
+
+            <label>
+              <p>Contibution start date</p>
+              <input type="date" placeholder="Contribution start date" />
+            </label>
+
+            <label>
+              <p>Contribution end date (if applicabble)</p>
+              <input type="date" placeholder="Contribution end date" />
+            </label>
+          </div>
+
           <button type="submit">Register employee</button>
         </form>
       </section>
