@@ -16,7 +16,7 @@ import EmployeeSchedule from "./Pages/employee/schedule/EmployeeSchedule";
 import EmployeeEditProfile from "./Pages/employee/EmployeeEditProfile/EmployeeEditProfile";
 import DepartmentHome from "./Pages/department/home/home";
 import DepartmentMembers from "./Pages/department/members/members";
-import { MemberDetail } from "./Pages/department/members/detail";
+import { MemberDetail } from "./Pages/department/members/det";
 import DepartmentApps from "./Pages/department/apps/app";
 import DepartmentProfile from "./Pages/department/profile/profile";
 

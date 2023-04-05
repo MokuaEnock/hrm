@@ -1,0 +1,16 @@
+#department-det {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#department-det-cont {
+  width: 95vw;
+  height: 100%;
+  overflow-y: scroll;
+  margin-left: 10%;
+  border: thin solid black;
+}

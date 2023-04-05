@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Reimbursement() {
   let generateReimburse = () => {
-    let doc = new jsPDF("landscape");
+    let doc = new jsPDF("portrait");
     doc.setFontSize(14);
 
     doc.output("dataurlnewwindow");

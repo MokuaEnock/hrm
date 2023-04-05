@@ -1,10 +1,10 @@
-import { useParams } from "react-router-dom";
-import { useState } from "react";
-
-import "./details.css";
 import DepartmentHeader from "../header/header";
 import DepartmentNav from "../navbar/navbar";
+import "./det.css";
+import "./details.css";
 
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 const users = [
   {
     id: 1,
@@ -170,13 +170,11 @@ export function MemberDetail() {
   if (!user) {
     return <div>User not found</div>;
   }
-
   return (
-    <section className="department-cont">
+    <section id="department-det">
       <DepartmentNav />
-      <section id="department-member" className="member-cont">
-        <DepartmentHeader message={`Welcome to ${user.name}'s profile.`} />
-
+      <section id="department-det-cont">
+        <DepartmentHeader message={`Welcome to ${user.name}'s profile`} />
         <section id="member-home">
           <div id="member-home-stats">
             <span className="member-home-cont">

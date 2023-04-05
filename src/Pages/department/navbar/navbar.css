@@ -6,8 +6,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  left: 0;
+  /* position: fixed; */
+  /* left: 0; */
 }
 
 #departent-nav > span {
@@ -30,7 +30,7 @@
   margin: 0.6rem 0;
   font-size: 2rem;
 }
-
+/*
 .tooltip {
   position: relative;
   display: inline-block;
@@ -47,7 +47,7 @@
   border-radius: 0 1rem 1rem 0;
   padding: 5px 1rem;
 
-  /* Position the tooltip */
+  Position the tooltip
   position: absolute;
   z-index: 1;
 }
@@ -59,7 +59,7 @@
   visibility: visible;
 }
 
-#department-nav-header, 
+#department-nav-header,
 #department-nav-foot {
   color: white;
-}
+} */
