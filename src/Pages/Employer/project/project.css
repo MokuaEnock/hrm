@@ -1,0 +1,89 @@
+#employer-project {
+  width: 95vw;
+  height: 100vh;
+  background-color: var(--primary-color);
+}
+
+#employer-project-cont {
+  width: 100%;
+  height: 90%;
+  border: thin solid var(--tertiary-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* #employer-project-cont > * {
+  border: thin solid black;
+} */
+
+#employer-projects-main {
+  width: 70%;
+  height: 100%;
+}
+
+#employer-projects-main > h3 {
+  width: 100%;
+  color: var(--tertiary-color);
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 200;
+  background-color: var(--primary-color);
+}
+
+#employer-projects-aside {
+  width: 30%;
+  height: 100%;
+  background-color: var(--tertiary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#employer-projects-aside > h3 {
+  width: 98%;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  height: 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+  border-bottom: thin solid white;
+}
+
+#project-buttons {
+  width: 98%;
+  height: 6%;
+  margin-bottom: 1vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#project-buttons > button {
+  height: 100%;
+  width: 40%;
+  border-radius: 2px;
+  font-size: 1rem;
+}
+
+#project-update-button {
+  color: white;
+  background-color: transparent;
+  border: thin solid white;
+}
+
+#project-delete-button {
+  border: thin solid transparent;
+  color: var(--tertiary-color);
+  background-color: white;
+}
