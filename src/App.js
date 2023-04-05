@@ -29,6 +29,7 @@ import EmployerEmployees from "./Pages/Employer/Employees/employees";
 import EmployerMoney from "./Pages/Employer/Money/money";
 import EmployerDept from "./Pages/Employer/Money/dept";
 import EmployerProfile from "./Pages/Employer/Profile/profile";
+import EmployerProject from "./Pages/Employer/project/project";
 
 function App() {
   return (
@@ -79,6 +80,7 @@ function App() {
           <Route path="employees" element={<EmployerEmployees />} />
           <Route path="money" element={<EmployerMoney />} />
           <Route path="profile" element={<EmployerProfile />} />
+          <Route path="project" element={<EmployerProject />} />
           <Route path="money/department/:id" element={<EmployerDept />} />
         </Route>
       </Routes>

@@ -38,7 +38,7 @@ export default function EmployerApps() {
             <p>Profile</p>
           </Link>
 
-          <Link to="/employer/employees">
+          <Link to="/employer/projects">
             <span>
               <FaProjectDiagram />
             </span>
