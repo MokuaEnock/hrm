@@ -179,6 +179,18 @@ export default function EmployerEmployees() {
               <p>National I.D</p>
               <input type="number" placeholder="Id number" />
             </label>
+          </div>
+
+          <span className="client-money-section3-head">
+            <h4>Work details</h4>
+            <p>Add the employees work details</p>
+          </span>
+
+          <div>
+            <label>
+              <p>Employee basic salary</p>
+              <input type="number" placeholder="Basic salary" min="0"/>
+            </label>
 
             <label>
               <p>Employee role</p>
@@ -222,6 +234,7 @@ export default function EmployerEmployees() {
               <input type="number" placeholder="Phone number" />
             </label> */}
           </div>
+
           <span className="client-money-section3-head">
             <h4>Financial details</h4>
             <p>Add the employee's financial data</p>
