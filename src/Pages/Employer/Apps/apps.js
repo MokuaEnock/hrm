@@ -7,6 +7,7 @@ import {
   FaMoneyBillAlt,
   FaUserCircle,
   FaUsers,
+  FaProjectDiagram,
 } from "react-icons/fa";
 
 export default function EmployerApps() {
@@ -17,7 +18,9 @@ export default function EmployerApps() {
         <EmployerHead message={"Where would you like to navigate to?"} />
         <div id="employer-apps-cont">
           <Link to="/employer/home">
-            <span><FaChartArea /></span>
+            <span>
+              <FaChartArea />
+            </span>
             <p>Dashboard</p>
           </Link>
 
@@ -33,6 +36,13 @@ export default function EmployerApps() {
               <FaUserCircle />
             </span>
             <p>Profile</p>
+          </Link>
+
+          <Link to="/employer/employees">
+            <span>
+              <FaProjectDiagram />
+            </span>
+            <p>Projects</p>
           </Link>
 
           <Link to="/employer/employees">
