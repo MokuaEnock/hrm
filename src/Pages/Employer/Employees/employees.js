@@ -335,6 +335,26 @@ export default function EmployerEmployees() {
             </label>
 
             <label>
+              <p>Sacco bank name</p>
+              <input type="text" placeholder="Sacco bank name" />
+            </label>
+
+            <label>
+              <p>Sacco bank branch</p>
+              <input type="text" placeholder="Sacco bank branch" />
+            </label>
+
+            <label>
+              <p>Sacco bank account name</p>
+              <input type="text" placeholder="Sacco bank account name" />
+            </label>
+
+            <label>
+              <p>Sacco bank account number</p>
+              <input type="text" placeholder="Sacco bank account number" />
+            </label>
+
+            <label>
               <p>Sacco membership number</p>
               <input type="text" placeholder="Membership Number" />
             </label>
@@ -342,6 +362,68 @@ export default function EmployerEmployees() {
             <label>
               <p>Contribution Amount</p>
               <input type="number" placeholder="Contribution amount" />
+            </label>
+
+            <label>
+              <p>Contibution start date</p>
+              <input type="date" placeholder="Contribution start date" />
+            </label>
+
+            <label>
+              <p>Contribution end date (if applicabble)</p>
+              <input type="date" placeholder="Contribution end date" />
+            </label>
+          </div>
+
+          <span className="client-money-section3-head">
+            <h4>Insurance details</h4>
+            <p>Add the insurance details if any</p>
+          </span>
+
+          <div>
+            <label>
+              <p>Issuarance company Name</p>
+              <input type="text" placeholder="Issuarance company name" />
+            </label>
+
+            <label>
+              <p>Insuarance registration number</p>
+              <input type="text" placeholder="Insuarance registration number" />
+            </label>
+
+            <label>
+              <p>Insuarance company bank name</p>
+              <input type="text" placeholder="Bank name" />
+            </label>
+
+            <label>
+              <p>Insuarance bank branch</p>
+              <input type="text" placeholder="Bank branch" />
+            </label>
+
+            <label>
+              <p>Insuarance company bank account name</p>
+              <input type="text" placeholder="Bank account name" />
+            </label>
+
+            <label>
+              <p>Insuarance company bank account number</p>
+              <input type="text" placeholder="Bank account number" />
+            </label>
+
+            <label>
+              <p>Premium type</p>
+              <input type="text" placeholder="Premium type" />
+            </label>
+
+            <label>
+              <p>Insuarance policy number</p>
+              <input type="text" placeholder="Policy Number" />
+            </label>
+
+            <label>
+              <p>Insuarance premium Amount</p>
+              <input type="number" placeholder="Premium amount" />
             </label>
 
             <label>
