@@ -13,6 +13,11 @@ export default function EmployerProject() {
             <h3>Your current projects</h3>
             <ol id="employer-projects-list">
               <li className="employer-projects-items"></li>
+              <li className="employer-projects-items"></li>
+              <li className="employer-projects-items"></li>
+              <li className="employer-projects-items"></li>
+              <li className="employer-projects-items"></li>
+              <li className="employer-projects-items"></li>
             </ol>
           </div>
           <aside id="employer-projects-aside">
