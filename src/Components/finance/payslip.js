@@ -3,13 +3,17 @@ import React from "react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import { FaDownload } from "react-icons/fa";
+import logo from "../../Assets/unnamed.png";
 
 export default function Payslip() {
   let generatePayslip = () => {
     let doc = new jsPDF("landscape");
     doc.setFontSize(10);
-    // employer heading
 
+    // add logo at top right corner
+    doc.addImage(logo, "PNG", 230, 5, 50, 15);
+
+    // employer heading
     doc.text(
       "Transatal consulting limited P.o Box 12-40200 Nairobi PaySlip week 45-46",
       5,
@@ -22,7 +26,6 @@ export default function Payslip() {
     // add employee data table
     doc.autoTable({
       startY: 30,
-      // fontSize: 10,
       head: [
         [
           "Basic Salary",
@@ -78,7 +81,6 @@ export default function Payslip() {
     // add employee data table 2
     doc.autoTable({
       startY: 55,
-      // fontSize: 10,
       head: [
         [
           "DoubleOT Pay",
