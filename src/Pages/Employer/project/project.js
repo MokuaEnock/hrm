@@ -20,7 +20,15 @@ export default function EmployerProject() {
           <aside id="employer-projects-aside">
             <h3>Project Vanilla</h3>
             <div id="employer-projects-aside-info">
-              <p>Department: </p>
+              <span>
+                <p>Department: </p>
+              </span>
+
+              <span id="projects-progress-bar">
+                <p>Project progress</p>
+                <p>50%</p>
+                <progress value={50} max={100} />
+              </span>
             </div>
             <span id="project-buttons">
               <button id="project-update-button">Update</button>
