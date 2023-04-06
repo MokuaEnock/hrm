@@ -7,7 +7,7 @@ import { FaDownload } from "react-icons/fa";
 export default function Payslip() {
   let generatePayslip = () => {
     let doc = new jsPDF("landscape");
-    doc.setFontSize(12);
+    doc.setFontSize(10);
     // employer heading
 
     doc.text(
@@ -25,6 +25,15 @@ export default function Payslip() {
       // fontSize: 10,
       head: [
         [
+          "Basic Salary",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "ExtraPay1",
           "",
           "",
           "",
@@ -33,19 +42,10 @@ export default function Payslip() {
           "",
           "",
           "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
+          "ExtraPay2",
+          "Late Payment",
+          "Incentives",
+          "NormaIOT",
         ],
       ],
       body: [
@@ -77,9 +77,21 @@ export default function Payslip() {
 
     // add employee data table 2
     doc.autoTable({
-      startY: 50,
+      startY: 55,
       // fontSize: 10,
-      head: [["", "", "", "", "", "", "", "", ""]],
+      head: [
+        [
+          "DoubleOT Pay",
+          "Gross Pay",
+          "NSSF",
+          "NHIF",
+          "PAYE",
+          "Sacco",
+          "Recovery",
+          "Arreas",
+          "Net Pay",
+        ],
+      ],
       body: [["10", "20", "30", "40", "50", "60", "70", "80", "90"]],
     });
 
