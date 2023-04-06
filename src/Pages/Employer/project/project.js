@@ -12,16 +12,16 @@ export default function EmployerProject() {
           <div id="employer-projects-main">
             <h3>Your current projects</h3>
             <ol id="employer-projects-list">
-              <li className="employer-projects-items"></li>
-              <li className="employer-projects-items"></li>
-              <li className="employer-projects-items"></li>
-              <li className="employer-projects-items"></li>
-              <li className="employer-projects-items"></li>
-              <li className="employer-projects-items"></li>
+              <li className="employer-projects-items">
+                <span className="employer-projects-items-head"></span>
+              </li>
             </ol>
           </div>
           <aside id="employer-projects-aside">
             <h3>Project Vanilla</h3>
+            <div id="employer-projects-aside-info">
+              <p>Department: </p>
+            </div>
             <span id="project-buttons">
               <button id="project-update-button">Update</button>
               <button id="project-delete-button">Delete</button>

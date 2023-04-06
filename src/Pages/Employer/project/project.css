@@ -38,9 +38,10 @@
 
 #employer-projects-main > ol {
   width: 100%;
-  height: 60%;
+  height: 94%;
   background-color: white;
   overflow-y: scroll;
+  list-style: none;
 }
 
 .employer-projects-items {
@@ -54,6 +55,22 @@
   margin-top: 0.8vh;
   margin-bottom: 0.8vh;
   background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.employer-projects-items-head {
+  width: 10%;
+  border-bottom-left-radius: inherit;
+  border-top-left-radius: inherit;
+  height: 100%;
+  background-color: var(--tertiary-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 #employer-projects-aside {
