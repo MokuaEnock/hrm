@@ -140,6 +140,20 @@ export default function EmployeeMoney() {
     },
   ];
 
+  let employee1 = {
+    Employee_Id: 1234,
+    Name: "John Doe",
+    Department: "Sales",
+    Designation: "Sales Manager",
+    Start_Date: "2022-01-01",
+    End_Date: null,
+    Gross_Salary: 5000,
+    NHIF: 500,
+    NSSF: 600,
+    PAYE: 800,
+    Net_Salary: 3100,
+  };
+
   return (
     <section id="employee-cont">
       <EmployeeNavBar />
@@ -197,7 +211,7 @@ export default function EmployeeMoney() {
       </section>
       <aside id="employee-payroll">
         <button id="button-payslip">
-          <Payslip employee={employee} />
+          <Payslip />
         </button>
 
         <button id="button-payslip">
