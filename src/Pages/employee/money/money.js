@@ -210,13 +210,9 @@ export default function EmployeeMoney() {
         </div>
       </section>
       <aside id="employee-payroll">
-        <button id="button-payslip">
-          <Payslip />
-        </button>
+        <Payslip />
 
-        <button id="button-payslip">
-          <EmployeePerformanceReport employee={"Enock Mokua"} />
-        </button>
+        <EmployeePerformanceReport employee={"Enock Mokua"} />
       </aside>
       <br />
     </section>
