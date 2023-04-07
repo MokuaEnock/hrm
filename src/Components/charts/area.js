@@ -42,7 +42,7 @@ const data = {
   labels,
   datasets: [
     {
-      data: [250, 500, 750, 300, 600, 200, 900, 450, 800, 350, 700, 400],
+      data: [250, 500, 350, 300, 200, 200, 150, 450, 800, 350, 700, 400],
       borderColor: "#23d16b",
       backgroundColor: "rgba(35, 209, 107, 0.5)",
       borderWidth: 2,
