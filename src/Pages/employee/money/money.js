@@ -6,6 +6,7 @@ import { FaDownload } from "react-icons/fa";
 import { Bar, Line } from "react-chartjs-2";
 import Payslip from "../../../Components/finance/payslip";
 import EmployeePerformanceReport from "../../../Components/finance/report";
+import ChartArea from "../../../Components/charts/area";
 
 import {
   Chart as ChartJS,
@@ -185,12 +186,13 @@ export default function EmployeeMoney() {
         <div id="employee-money-cont2">
           <div id="employee-money-cont2-1">
             <p>Last week's overview</p>
-            <Bar
+            {/* <Bar
               data={data}
               options={{
                 responsive: true,
               }}
-            />
+            /> */}
+            <ChartArea />
           </div>
 
           <div id="employee-money-cont2-2">
