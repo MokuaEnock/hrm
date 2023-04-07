@@ -210,9 +210,16 @@ export default function EmployeeMoney() {
         </div>
       </section>
       <aside id="employee-payroll">
-        <Payslip />
+        <div id="employee-aside-info">
+          <h3>Your information</h3>
+        </div>
 
-        <EmployeePerformanceReport employee={"Enock Mokua"} />
+        <div id="employee-aside-reports">
+          <h3>Download your reports</h3>
+
+          <Payslip />
+          <EmployeePerformanceReport />
+        </div>
       </aside>
       <br />
     </section>
