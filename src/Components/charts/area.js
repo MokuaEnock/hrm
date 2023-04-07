@@ -42,47 +42,39 @@ const data = {
   labels,
   datasets: [
     {
-      label: "Dataset 2",
       data: [250, 500, 750, 300, 600, 200, 900, 450, 800, 350, 700, 400],
-      borderColor: "rgb(53, 162, 235)",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      borderColor: "#23d16b",
+      backgroundColor: "rgba(35, 209, 107, 0.5)",
       borderWidth: 2,
-      borderRadius: 10, // Add borderRadius to round edges
+      borderRadius: 10,
       fill: true,
-      tension: 0.4, // Add tension to make the line smooth
+      tension: 0.4,
     },
   ],
 };
 
 const options = {
   responsive: true,
-  maintainAspectRatio: false, // Set maintainAspectRatio to false
-  aspectRatio: 2, // Set aspectRatio to 2
+  maintainAspectRatio: false,
+  aspectRatio: 2,
   plugins: {
     legend: {
-      position: "top",
-      labels: {
-        boxWidth: 20, // Add boxWidth to increase legend symbol size
-      },
+      display: false,
     },
-    title: {
-      display: true,
-      text: "Chart.js Area Chart",
-      font: {
-        size: 18,
-      },
+    tooltip: {
+      enabled: true,
     },
   },
   elements: {
     line: {
-      tension: 0.2, // Add tension to make the line smooth
+      tension: 0.2,
       borderWidth: 1,
       borderColor: "rgba(0,0,0,0.2)",
-      backgroundColor: "rgba(0,0,0,0.2)", // Add backgroundColor to make the area faded
-      borderRadius: 10, // Add borderRadius to round edges
+      backgroundColor: "rgba(0,0,0,0.2)",
+      borderRadius: 10,
     },
     point: {
-      radius: 0, // Remove point symbols
+      radius: 0,
     },
   },
   scales: {
