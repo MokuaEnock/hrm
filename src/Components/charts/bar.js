@@ -46,12 +46,15 @@ const yearlyData = {
 
 function EmployeeMoney() {
   return (
-    <Bar
-      data={yearlyData}
-      options={{
-        responsive: true,
-      }}
-    />
+    <div style={{ height: "100%", width: "100%" }}>
+      <Bar
+        data={yearlyData}
+        options={{
+          maintainAspectRatio: false,
+          responsive: true,
+        }}
+      />
+    </div>
   );
 }
 
