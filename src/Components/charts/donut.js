@@ -10,31 +10,30 @@ const data = {
     {
       label: "My First Dataset",
       data: [300, 50, 100],
-      backgroundColor: [
-        "rgba(0, 99, 132, 0.8)",
-        "rgba(54, 162, 235, 0.8)",
-        "rgba(99, 132, 0, 0.8)",
-      ],
+      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
       hoverOffset: 4,
     },
   ],
 };
 
-const options = {
-  responsive: true,
-  plugins: {
-    tooltip: {
-      enabled: true,
-      backgroundColor: "rgba(255,255,255,0.8)",
-      bodyColor: "rgba(0,0,0,0.8)",
-    },
-  },
-};
-
 export default function DonutGraph() {
   return (
     <div style={{ height: "100%", width: "100%" }}>
-      <Doughnut data={data} options={options} />
+      <Doughnut
+        data={data}
+        options={{
+          maintainAspectRatio: false,
+          tooltips: {
+            enabled: true,
+            mode: "single",
+            callbacks: {
+              label: (tooltipItems, data) => {
+                return `${data.labels[tooltipItems.index]}: ${data.datasets[0].data[tooltipItems.index]}`;
+              },
+            },
+          },
+        }}
+      />
     </div>
   );
 }
