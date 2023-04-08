@@ -5,6 +5,8 @@ import EmployeeHeader from "../header/EmployeeHeader";
 import Payslip from "../../../Components/finance/payslip";
 import EmployeePerformanceReport from "../../../Components/finance/report";
 import ChartArea from "../../../Components/charts/area";
+import BarPlot from "../../../Components/charts/bar";
+import DonutGraph from "../../../Components/charts/donut";
 
 export default function EmployeeMoney() {
   return (
@@ -43,11 +45,13 @@ export default function EmployeeMoney() {
 
           <div id="employee-money-cont2-2">
             <p>Wages comparison</p>
+            <DonutGraph />
           </div>
         </div>
         <div id="employee-money-cont3">
           <div id="employee-money-cont3-2">
             <p>Monthly payroll</p>
+            <BarPlot />
           </div>
         </div>
       </section>

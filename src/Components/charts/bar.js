@@ -7,17 +7,9 @@ import {
   BarElement,
   Title,
   Tooltip,
-  Legend,
 } from "chart.js";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 
 const yearlyData = {
   labels: [
@@ -39,12 +31,12 @@ const yearlyData = {
       label: "Amount paid in Ksh",
       data: [82, 74, 54, 59, 77, 85, 78, 75, 70, 80, 90, 100],
       borderColor: "black",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      backgroundColor: "#024751",
     },
   ],
 };
 
-function EmployeeMoney() {
+export default function BarPlot() {
   return (
     <div style={{ height: "100%", width: "100%" }}>
       <Bar
@@ -52,10 +44,13 @@ function EmployeeMoney() {
         options={{
           maintainAspectRatio: false,
           responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
         }}
       />
     </div>
   );
 }
-
-export default EmployeeMoney;
