@@ -7,6 +7,7 @@ import EmployeePerformanceReport from "../../../Components/finance/report";
 import ChartArea from "../../../Components/charts/area";
 import BarPlot from "../../../Components/charts/bar";
 import DonutGraph from "../../../Components/charts/donut";
+import LineChart from "../../../Components/charts/line";
 
 export default function EmployeeMoney() {
   return (
@@ -40,7 +41,8 @@ export default function EmployeeMoney() {
         <div id="employee-money-cont2">
           <div id="employee-money-cont2-1">
             <p>Last week's overview</p>
-            <ChartArea />
+            {/* <ChartArea /> */}
+            <LineChart />
           </div>
 
           <div id="employee-money-cont2-2">

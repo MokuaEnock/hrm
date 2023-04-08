@@ -10,7 +10,6 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import faker from "faker";
 
 ChartJS.register(
   CategoryScale,
@@ -24,6 +23,7 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  maintainAspectRatio: false, // <-- add this option
   plugins: {
     legend: {
       position: "top",
@@ -42,19 +42,26 @@ export const data = {
   datasets: [
     {
       label: "Dataset 1",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: [1500, 1200, 1700, 1300, 1900, 1400, 2000],
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
+      borderCapStyle: "round",
     },
     {
       label: "Dataset 2",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: [1000, 1100, 1300, 1400, 1200, 1500, 1300],
       borderColor: "rgb(53, 162, 235)",
       backgroundColor: "rgba(53, 162, 235, 0.5)",
+      borderCapStyle: "round",
     },
   ],
 };
 
 export default function LineChart() {
-  return <Line options={options} data={data} />;
+  return (
+    <div style={{ height: "100%" }}>
+      {/* <-- add height style */}
+      <Line options={options} data={data} />
+    </div>
+  );
 }
