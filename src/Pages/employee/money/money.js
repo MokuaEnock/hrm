@@ -109,7 +109,6 @@ export default function EmployeeMoney() {
 
         <div id="employee-aside-reports">
           <h3>Download your reports</h3>
-
           <Payslip />
           <EmployeePerformanceReport />
         </div>

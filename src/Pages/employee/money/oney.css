@@ -132,21 +132,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  border: thin solid white;
+  height: max-content;
+}
+
+#employee-aside-info {
 }
 
 #employee-aside-reports {
   width: 100%;
   height: 98%;
   height: max-content;
-  border: thin solid white;
+  border-top: thin solid white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 
-#employee-aside-reports > h3 {
-  font-size: 1.3rem;
+#employee-aside-reports > h3,
+#employee-aside-info > h3 {
+  font-size: 1rem;
   color: var(--primary-color);
   text-align: center;
   font-weight: 200;
