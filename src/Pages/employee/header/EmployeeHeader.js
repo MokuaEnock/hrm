@@ -1,11 +1,8 @@
 import React from "react";
 import "./EmployeeHeader.css";
 import { FaSearch } from "react-icons/fa";
-import userImage from "../../../Assets/useravatar.png";
-import { Link } from "react-router-dom";
 
 const EmployeeHeader = () => {
-  let navigation = document.querySelector(".navigation");
 
   return (
     <div>
