@@ -2,56 +2,11 @@ import EmployeeNavBar from "../navbar/navbar";
 import "./oney.css";
 import React from "react";
 import EmployeeHeader from "../header/EmployeeHeader";
-import { Bar } from "react-chartjs-2";
 import Payslip from "../../../Components/finance/payslip";
 import EmployeePerformanceReport from "../../../Components/finance/report";
 import ChartArea from "../../../Components/charts/area";
 
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
 export default function EmployeeMoney() {
-  const yearlyData = {
-    labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sept",
-      "Oct",
-      "Nov",
-      "Dec",
-    ],
-    datasets: [
-      {
-        label: "Amount paid in Ksh",
-        data: [82, 74, 54, 59, 77, 85, 78, 75, 70, 80, 90, 100],
-        borderColor: "black",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-    ],
-  };
-
   return (
     <section id="employee-cont">
       <EmployeeNavBar />
@@ -93,12 +48,6 @@ export default function EmployeeMoney() {
         <div id="employee-money-cont3">
           <div id="employee-money-cont3-2">
             <p>Monthly payroll</p>
-            <Bar
-              data={yearlyData}
-              options={{
-                responsive: true,
-              }}
-            />
           </div>
         </div>
       </section>
