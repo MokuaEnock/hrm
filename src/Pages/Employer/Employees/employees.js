@@ -81,7 +81,7 @@ export default function EmployerEmployees() {
         let headers = sheetDataArray[0];
         let rows = sheetDataArray.slice(1);
         let sheetObjects = rows
-          .filter((row) => row.some((cell) => cell !== "")) // filter out rows that have all empty cells
+          .filter((row) => row.some((cell) => cell !== ""))
           .map((row) => {
             let obj = {};
             headers.forEach((header, index) => {
@@ -91,7 +91,16 @@ export default function EmployerEmployees() {
           });
         extractedData[sheetName] = sheetObjects;
       });
-      return extractedData;
+
+      // Create array of row dictionaries for each sheet
+      let sheets = {};
+      Object.keys(extractedData).forEach((sheetName) => {
+        let sheetDataArray = extractedData[sheetName];
+        let rows = sheetDataArray.map((obj) => obj);
+        sheets[sheetName] = rows;
+      });
+
+      return sheets;
     });
   }
 
