@@ -1,12 +1,11 @@
 import "./auth.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../../../Components/Static/header/header";
 import Footer from "../../../Components/Static/footer/footer";
 
 export default function Signup() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -40,9 +39,8 @@ export default function Signup() {
         if (response.ok) {
           response.json().then((data) => {
             localStorage.setItem("employerId", data.id);
-            console.log(data);
-            localStorage.setItem("jwtToken", data.jwt);
-            // navigate("/client/home");
+            // localStorage.setItem("jwtToken", data.jwt);
+            navigate("/employer/employees");
           });
         } else {
           response.json().then((data) => {

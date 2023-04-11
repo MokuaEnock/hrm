@@ -189,7 +189,7 @@ export default function EmployerEmployees() {
           <div>
             <label>
               <p>Employee basic salary</p>
-              <input type="number" placeholder="Basic salary" min="0"/>
+              <input type="number" placeholder="Basic salary" min="0" />
             </label>
 
             <label>

@@ -15,7 +15,9 @@ export default function Login() {
     <>
       <Header />
       <main id="login">
-        <div></div>
+        <div className="auth-image">
+          hello
+        </div>
         <form id="login-form">
           <h4>Login Into your Account</h4>
           <input type="text" placeholder="Email Address" />
