@@ -5,79 +5,12 @@ import EmployerHead from "../components/head";
 import "./home.css";
 import { RiArrowUpSLine } from "react-icons/ri";
 import { RiArrowDownSLine } from "react-icons/ri";
-import { Pie } from "@nivo/pie";
-import { ThemeProvider, SvgWrapper } from "@nivo/core";
-import { Bar } from "react-chartjs-2";
-import LineChart from "./line";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import LineChartComponent from "./line";
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-let data = [
-  {
-    id: "Item1",
-    value: 410,
-    color: "#618B25",
-  },
-  {
-    id: "Item2",
-    value: 175,
-    color: "#C0F8D1",
-  },
-  {
-    id: "Item3",
-    value: 128,
-    color: "hsl(140, 18%, 16%)",
-  },
-];
+import LineChart from "../../../Components/charts/line";
+import DonutGraph from "../../../Components/charts/donut";
 
 export default function EmployerHome() {
-  function handleSearch() {
-    let employerId = parseInt(localStorage.getItem("employerId"));
-    fetch(`http://localhost:3000/employers/${employerId}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => console.error(error));
-  }
-
-  const datal = {
-    labels: ["Item 1", "Item 2"],
-    datasets: [
-      {
-        label: "Item 1",
-        data: [82, 100],
-        borderColor: "black",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "Item 2",
-        data: [40, 80],
-        borderColor: "black",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-      },
-    ],
-  };
-
   const users = [
     { id: 1, name: "John Doe", email: "john.doe@example.com" },
     { id: 2, name: "Jane Smith", email: "jane.smith@example.com" },
@@ -139,41 +72,13 @@ export default function EmployerHome() {
           <div id="client-home-bar">
             <p className="client-home-chart-title">Deductions and Net pay</p>
             <div className="chart-container">
-              <Bar
-                data={datal}
-                options={{
-                  responsive: true,
-                }}
-              />
+              <LineChart />
             </div>
           </div>
           <div id="client-home-pie">
-            <p className="client-home-chart-title">Gender balance</p>
+            <p className="client-home-chart-title">Employee Attendance</p>
             <div>
-              <Pie
-                width={300}
-                height={300}
-                data={data}
-                margin={{
-                  top: 40,
-                  right: 80,
-                  bottom: 80,
-                  left: 80,
-                }}
-                innerRadius={0.5}
-                padAngle={0.7}
-                cornerRadius={3}
-                borderColor="inherit:darker(0.6)"
-                className="nivo-pie"
-              />
-              <ThemeProvider>
-                <SvgWrapper
-                  height={100}
-                  width={400}
-                  margin={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                ></SvgWrapper>
-              </ThemeProvider>
-              {/* <LineChartComponent /> */}
+              <DonutGraph />
             </div>
           </div>
         </div>
@@ -182,7 +87,7 @@ export default function EmployerHome() {
           <div id="client-home-emps-header">
             <h3>Employees</h3>
             <form id="client-home-emps-form">
-              <FaSearch />
+              <FaSearch style={{ fontSize: "16px" }} className="icon" />
               <input type="text" placeholder="search" />
             </form>
           </div>

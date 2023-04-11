@@ -102,7 +102,6 @@
 #client-home-bar {
   width: 63%;
   height: 100%;
-  border: thin solid black;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -112,7 +111,6 @@
 #client-home-pie {
   width: 33%;
   height: 100%;
-  border: thin solid black;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -157,11 +155,12 @@ canvas {
 #client-home-emps {
   width: 98%;
   height: 40%;
+  margin-top: 1vh;
 }
 
 #client-home-emps-header {
   width: 100%;
-  height: 15%;
+  height: 5vh;
   font-size: 1rem;
   display: flex;
   justify-content: space-between;
@@ -169,12 +168,46 @@ canvas {
 }
 
 #client-home-emps-header > h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   height: 100%;
   width: 30%;
   display: flex;
+  color: var(--tertiary-color);
+  font-weight: lighter;
   justify-content: flex-start;
   align-items: center;
+}
+
+#client-home-emps-form {
+  width: 20%;
+  height: 100%;
+  border: thin solid var(--tertiary-color);
+  border-radius: 100px;
+  display: flex;
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#client-home-emps-form > .icon {
+  width: 25%;
+  height: 100%;
+  font-size: .8rem;
+  size: .8rem;
+  background-color: var(--tertiary-color);
+  border: none;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+#client-home-emps-form > input {
+  width: 75%;
+  height: 100%;
+  text-align: center;
+  border: none;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
 }
 
 #client-home-emps-head {

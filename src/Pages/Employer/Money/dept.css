@@ -162,12 +162,9 @@
 
 #client-payment-cont-1-2 {
   width: 100%;
-  height: max-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  height: 50%;
   list-style: none;
+  overflow-y: scroll;
   color: var(--tertiary-color);
 }
 
