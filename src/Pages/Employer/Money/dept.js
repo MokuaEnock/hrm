@@ -55,7 +55,7 @@ export default function EmployerDept() {
         <EmployerHead message={"Manage your finances today."} />
         <section id="client-payment-cont">
             <div id="client-payment-cont1">
-              <h4>Engineering department</h4>
+              <h5>Engineering department</h5>
               <div id="client-payment-cont-1-1">
                 <span className="client-payment-cont-1-1"></span>
                 <span className="client-payment-cont-1-1"></span>
