@@ -52,6 +52,7 @@ export default function EmployerEmployees() {
       [event.target.name]: event.target.value,
     });
   };
+
   // function to extract data from excel sheet
   function extractData(file) {
     return new Promise((resolve, reject) => {
@@ -79,13 +80,15 @@ export default function EmployerEmployees() {
         let sheetDataArray = sheetData[sheetName];
         let headers = sheetDataArray[0];
         let rows = sheetDataArray.slice(1);
-        let sheetObjects = rows.map((row) => {
-          let obj = {};
-          headers.forEach((header, index) => {
-            obj[header] = row[index];
+        let sheetObjects = rows
+          .filter((row) => row.some((cell) => cell !== "")) // filter out rows that have all empty cells
+          .map((row) => {
+            let obj = {};
+            headers.forEach((header, index) => {
+              obj[header] = row[index];
+            });
+            return obj;
           });
-          return obj;
-        });
         extractedData[sheetName] = sheetObjects;
       });
       return extractedData;
