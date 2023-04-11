@@ -23,16 +23,14 @@ export default function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/api/v1/users", {
+    fetch("http://localhost:3000/employers", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        user: {
-          email: formData.email,
-          name: formData.name,
-          password: formData.password,
-          password_confirmation: formData.password_confirmation,
-        },
+        email: formData.email,
+        name: formData.name,
+        password: formData.password,
+        password_confirmation: formData.password_confirmation,
       }),
     })
       .then((response) => {
