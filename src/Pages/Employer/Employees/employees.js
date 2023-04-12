@@ -102,9 +102,10 @@ export default function EmployerEmployees() {
 
       let departments = extractedData[Object.keys(extractedData)[0]].map(
         (dept) => {
-          let { moderator, ...rest } = dept; // use object destructuring to remove moderator attribute
+          let { moderator, Name, ...rest } = dept; // use object destructuring to remove moderator attribute and rename Name attribute to name
           return {
             ...rest,
+            name: dept.Name, // rename Name attribute to name
             password: dept.email,
             password_confirmation: dept.email,
             employer_id: localStorage.getItem("employerId"),
@@ -114,16 +115,16 @@ export default function EmployerEmployees() {
 
       let employees = extractedData[Object.keys(extractedData)[1]];
 
-      // fetch("http://localhost:3000/departments_all", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(departments),
-      // })
-      //   .then((response) => response.json())
-      //   .then((data) => console.log(data))
-      //   .catch((error) => console.error(error));
+      fetch("http://localhost:3000/departments_all", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(departments),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error(error));
 
       return departments;
     });
