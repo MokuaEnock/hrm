@@ -100,7 +100,21 @@ export default function EmployerEmployees() {
         sheets[sheetName] = rows;
       });
 
-      return sheets;
+      let departments = extractedData[Object.keys(extractedData)[0]];
+      let employees = extractedData[Object.keys(extractedData)[1]];
+
+      // fetch("your_api_endpoint", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(departments),
+      // })
+      //   .then((response) => response.json())
+      //   .then((data) => console.log(data))
+      //   .catch((error) => console.error(error));
+
+      return employees;
     });
   }
 
