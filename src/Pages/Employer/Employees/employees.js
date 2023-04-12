@@ -102,18 +102,19 @@ export default function EmployerEmployees() {
 
       let departments = extractedData[Object.keys(extractedData)[0]].map(
         (dept) => {
+          let { moderator, ...rest } = dept; // use object destructuring to remove moderator attribute
           return {
-            ...dept,
+            ...rest,
             password: dept.email,
             password_confirmation: dept.email,
             employer_id: localStorage.getItem("employerId"),
           };
         }
       );
-      
+
       let employees = extractedData[Object.keys(extractedData)[1]];
 
-      // fetch("your_api_endpoint", {
+      // fetch("http://localhost:3000/departments_all", {
       //   method: "POST",
       //   headers: {
       //     "Content-Type": "application/json",
