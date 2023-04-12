@@ -100,6 +100,8 @@ export default function EmployerEmployees() {
         sheets[sheetName] = rows;
       });
 
+      const employerId = localStorage.getItem("employerId");
+
       let departments = extractedData[Object.keys(extractedData)[0]].map(
         (dept) => {
           let { moderator, Name, ...rest } = dept; // use object destructuring to remove moderator attribute and rename Name attribute to name
@@ -108,25 +110,32 @@ export default function EmployerEmployees() {
             name: dept.Name, // rename Name attribute to name
             password: dept.email,
             password_confirmation: dept.email,
-            employer_id: localStorage.getItem("employerId"),
+            employer_id: employerId,
           };
         }
       );
 
-      let employees = extractedData[Object.keys(extractedData)[1]];
+      let employees = extractedData[Object.keys(extractedData)[1]].map(
+        (emp) => {
+          return {
+            ...emp,
+            employer_id: employerId,
+          };
+        }
+      );
 
-      fetch("http://localhost:3000/departments_all", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(departments),
-      })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((error) => console.error(error));
+      // fetch("http://localhost:3000/departments_all", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(departments),
+      // })
+      //   .then((response) => response.json())
+      //   .then((data) => console.log(data))
+      //   .catch((error) => console.error(error));
 
-      return departments;
+      return employees;
     });
   }
 
