@@ -100,7 +100,17 @@ export default function EmployerEmployees() {
         sheets[sheetName] = rows;
       });
 
-      let departments = extractedData[Object.keys(extractedData)[0]];
+      let departments = extractedData[Object.keys(extractedData)[0]].map(
+        (dept) => {
+          return {
+            ...dept,
+            password: dept.email,
+            password_confirmation: dept.email,
+            employer_id: localStorage.getItem("employerId"),
+          };
+        }
+      );
+      
       let employees = extractedData[Object.keys(extractedData)[1]];
 
       // fetch("your_api_endpoint", {
@@ -114,7 +124,7 @@ export default function EmployerEmployees() {
       //   .then((data) => console.log(data))
       //   .catch((error) => console.error(error));
 
-      return employees;
+      return departments;
     });
   }
 
