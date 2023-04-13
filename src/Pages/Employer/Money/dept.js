@@ -59,8 +59,12 @@ export default function EmployerDept() {
             <h5>Engineering department</h5>
             <div id="client-payment-cont-1-1">
               <span className="client-payment-cont-1-1">
-                <OnelineChart />
+                <p>Net Pay</p>
+                <div>
+                  <OnelineChart />
+                </div>
               </span>
+
               <span className="client-payment-cont-1-1"></span>
               <span className="client-payment-cont-1-1"></span>
               <span className="client-payment-cont-1-1"></span>

@@ -45,6 +45,10 @@ const data = {
   ],
 };
 
-export default function OnelineChart() {
-  return <Line options={options} data={data} height="100%" />;
+export default function AreaChart() {
+  return (
+    <div style={{ width: "100%", height: "100%" }}>
+      <Line options={options} data={data} />
+    </div>
+  );
 }
