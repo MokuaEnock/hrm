@@ -50,7 +50,25 @@ export default function EmployerMoney() {
               </Link>
             ))}
           </div>
-          <aside id="client-payment-cont2"></aside>
+          <aside id="client-payment-cont2">
+            <h3>Downoad all employee information</h3>
+            <span>
+              <p>Next pay Date</p>
+              <p>12/05/2023</p>
+              <p>20 days 10 hours</p>
+            </span>
+
+            <span>
+              <p>Total Net pay so far</p>
+              <p>KES 12,500</p>
+            </span>
+
+            <span>
+              <h3>Dwonload documents</h3>
+              <button>Download Payslips</button>
+              <button>Download Attendance Sheets</button>
+            </span>
+          </aside>
         </section>
       </section>
     </section>
