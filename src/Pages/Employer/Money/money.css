@@ -42,13 +42,6 @@
   color: var(--tertiary-color);
 }
 
-#client-payment-cont2 {
-  justify-content: space-between;
-  width: 30%;
-  background-color: var(--tertiary-color);
-  border: none;
-}
-
 .payment-list {
   width: 95%;
   border: thin solid var(--tertiary-color);
@@ -95,4 +88,130 @@
   justify-content: space-evenly;
   font-size: 1rem;
   color: var(--tertiary-color);
+}
+
+#client-payment-cont2 {
+  justify-content: space-between;
+  width: 30%;
+  background-color: var(--tertiary-color);
+  border: none;
+}
+
+#client-payment-cont2 > * {
+  width: 98%;
+}
+
+#client-payment-cont2 > h3 {
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+#client-pay-date {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#client-pay-date > h3 {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: lighter;
+}
+
+#client-pay-date > p {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: lighter;
+}
+
+#client-payment-total {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#client-payment-total > h3 {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: lighter;
+}
+
+#client-payment-total > p {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: lighter;
+}
+
+#client-payment-downloads {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1vh;
+}
+
+#client-payment-downloads > h3 {
+  width: 100%;
+  height: 30%;
+  font-weight: lighter;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#client-payment-downloads > button {
+  text-align: center;
+  border: thin solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+  border-radius: 4px;
+  height: 25%;
 }
