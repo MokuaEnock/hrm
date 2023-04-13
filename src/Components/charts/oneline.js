@@ -34,11 +34,13 @@ const data = {
   datasets: [
     {
       data: labels.map(() => Math.floor(Math.random() * 100)),
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      borderColor: "rgb(54, 162, 235)",
+      backgroundColor: "rgba(54, 162, 235, 0.5)",
       borderWidth: 2,
       pointRadius: 0,
       tension: 0.4,
+      fill: true,
+      fillOpacity: 0.2,
     },
   ],
 };

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
+import OnelineChart from "../../../Components/charts/oneline";
 
 export default function EmployerDept() {
   let { id } = useParams();
@@ -57,7 +58,9 @@ export default function EmployerDept() {
           <div id="client-payment-cont1">
             <h5>Engineering department</h5>
             <div id="client-payment-cont-1-1">
-              <span className="client-payment-cont-1-1"></span>
+              <span className="client-payment-cont-1-1">
+                <OnelineChart />
+              </span>
               <span className="client-payment-cont-1-1"></span>
               <span className="client-payment-cont-1-1"></span>
               <span className="client-payment-cont-1-1"></span>
