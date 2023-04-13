@@ -2,6 +2,67 @@ import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import "./project.css";
 
+let data = {
+  projects: [
+    {
+      name: "Social Media Campaign",
+      progress: 75,
+      start_date: "2023-01-01",
+      end_date: "2023-03-31",
+      budget: 100000,
+      expenses: 75000,
+      status: "In Progress",
+      departments: [
+        {
+          name: "Marketing",
+        },
+      ],
+    },
+    {
+      name: "Market Research",
+      progress: 100,
+      start_date: "2022-10-01",
+      end_date: "2022-12-31",
+      budget: 50000,
+      expenses: 50000,
+      status: "Completed",
+      departments: [
+        {
+          name: "Marketing",
+        },
+      ],
+    },
+    {
+      name: "Website Redesign",
+      progress: 50,
+      start_date: "2023-01-01",
+      end_date: "2023-06-30",
+      budget: 150000,
+      expenses: 75000,
+      status: "In Progress",
+      departments: [
+        {
+          name: "IT",
+        },
+      ],
+    },
+    {
+      name: "Software Upgrade",
+      progress: 0,
+      start_date: "2023-04-01",
+      end_date: "2023-09-30",
+      budget: 100000,
+      expenses: 0,
+      status: "Not Started",
+      departments: [
+        {
+          name: "IT",
+        },
+      ],
+    },
+  ],
+};
+
 export default function EmployerProject() {
   return (
     <section className="employer-container">
