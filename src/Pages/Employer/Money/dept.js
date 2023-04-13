@@ -65,9 +65,26 @@ export default function EmployerDept() {
                 </div>
               </span>
 
-              <span className="client-payment-cont-1-1"></span>
-              <span className="client-payment-cont-1-1"></span>
-              <span className="client-payment-cont-1-1"></span>
+              <span className="client-payment-cont-1-1">
+                <p>Performance</p>
+                <div>
+                  <OnelineChart />
+                </div>
+              </span>
+
+              <span className="client-payment-cont-1-1">
+                <p>Attendance</p>
+                <div>
+                  <OnelineChart />
+                </div>
+              </span>
+
+              <span className="client-payment-cont-1-1">
+                <p>Absentism</p>
+                <div>
+                  <OnelineChart />
+                </div>
+              </span>
             </div>
 
             <form id="client-payment-cont-1-3" onSubmit={handleSetPay}>
