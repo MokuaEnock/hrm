@@ -124,16 +124,16 @@ export default function EmployerEmployees() {
         }
       );
 
-      fetch("http://localhost:3000/departments_all", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(departments),
-      })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((error) => console.error(error));
+      // fetch("http://localhost:3000/departments_all", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(departments),
+      // })
+      //   .then((response) => response.json())
+      //   .then((data) => console.log(data))
+      //   .catch((error) => console.error(error));
 
       fetch("http://localhost:3000/employees_all", {
         method: "POST",

@@ -16,7 +16,7 @@ export default function Login() {
       <Header />
       <main id="login">
         <div className="auth-image">
-          hello
+          Hello world
         </div>
         <form id="login-form">
           <h4>Login Into your Account</h4>
