@@ -131,7 +131,7 @@ export default function EmployerDept() {
 
           <aside id="client-payment-cont2">
             <h4>Summary for this week</h4>
-            <button id="client-payment-button">Release Salary</button>
+            <button id="client-payment-button">Download Pay</button>
           </aside>
         </section>
       </section>

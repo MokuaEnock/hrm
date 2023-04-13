@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  background-color: var(--primary-color);
 }
 
 #employer-apps-cont a {
@@ -18,6 +19,7 @@
 #employer-apps-cont > a {
   width: 17%;
   border: thin solid var(--tertiary-color);
+  background-color: white;
   border-radius: 4px;
   height: 25vh;
   text-decoration: none;
@@ -25,6 +27,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+#employer-apps-cont > a:hover {
+  border: 2px solid var(--tertiary-color);
 }
 
 #employer-apps-cont > a > span {
