@@ -152,6 +152,8 @@ export default function NewEmployerProject() {
                   ></textarea>
                 </label>
               </div>
+
+              <button>Submit</button>
             </form>
           </div>
         </section>

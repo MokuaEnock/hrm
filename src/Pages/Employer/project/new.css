@@ -1,7 +1,6 @@
 #project-form {
   width: 100%;
   height: 90%;
-  border: thin solid grey;
   background-color: white;
   overflow-y: scroll;
 }
@@ -11,7 +10,6 @@
   margin-top: 1vh;
   margin-bottom: 1vh;
   margin-left: 1.5vw;
-  border: thin solid grey;
   height: max-content;
 }
 
@@ -78,4 +76,15 @@
 
 textarea:focus {
   outline: none;
+}
+
+#project-form > button {
+  width: 18%;
+  height: 7vh;
+  margin-left: 40%;
+  border: thin solid var(--primary-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
 }
