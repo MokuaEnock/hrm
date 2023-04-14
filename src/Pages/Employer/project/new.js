@@ -1,6 +1,6 @@
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
-import "./project.css";
+import "./new.css";
 
 export default function NewEmployerProject() {
   return (
