@@ -27,6 +27,28 @@ let data = {
       expenses: 250000,
       status: "In Planning",
     },
+    {
+      id: 3,
+      name: "Website Redesign",
+      department: "IT",
+      progress: 50,
+      start_date: "2023-03-01",
+      end_date: "2023-06-30",
+      budget: 200000,
+      expenses: 100000,
+      status: "In Development",
+    },
+    {
+      id: 4,
+      name: "New Product Line",
+      department: "Product Development",
+      progress: 10,
+      start_date: "2023-04-01",
+      end_date: "2023-12-31",
+      budget: 1000000,
+      expenses: 500000,
+      status: "In Planning",
+    },
   ],
 };
 
