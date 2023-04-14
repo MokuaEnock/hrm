@@ -33,15 +33,6 @@ export default function NewEmployerProject() {
                   />
                 </label>
 
-                <label for="project-description">
-                  <p>Project Description:</p>
-                  <textarea
-                    id="project-description"
-                    name="project-description"
-                    required
-                  ></textarea>
-                </label>
-
                 <label for="start-date">
                   <p>Start Date:</p>
                   <input
@@ -55,6 +46,15 @@ export default function NewEmployerProject() {
                 <label for="end-date">
                   <p>End Date:</p>
                   <input type="date" id="end-date" name="end-date" required />
+                </label>
+
+                <label for="project-description">
+                  <p>Project Description:</p>
+                  <textarea
+                    id="project-description"
+                    name="project-description"
+                    required
+                  ></textarea>
                 </label>
               </div>
 
@@ -87,7 +87,7 @@ export default function NewEmployerProject() {
 
               <span className="project-form-header">
                 <h4>Project management</h4>
-                <p>project management details</p>
+                <p>Management details</p>
               </span>
 
               <div class="category-3">
@@ -128,7 +128,6 @@ export default function NewEmployerProject() {
               </span>
 
               <div class="category-4">
-                <h2>Performance Metrics</h2>
                 <label for="goals">
                   <p>Goals and Objectives:</p>
                   <textarea id="goals" name="goals" required></textarea>
