@@ -2,6 +2,7 @@ import { useState } from "react";
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import "./project.css";
+import { Link } from "react-router-dom";
 
 let data = {
   projects: [
@@ -88,7 +89,10 @@ export default function EmployerProject() {
         <EmployerHead message={"Manage your projects"} />
         <section id="employer-project-cont">
           <div id="employer-projects-main">
-            <h3>Your current projects</h3>
+            <span id="employer-projects-main-header">
+              <h3>Your current projects</h3>
+              <Link to="/employer/projects/new">New Project</Link>
+            </span>
             <ol id="employer-projects-list">
               {data.projects.map((project) => (
                 <li
