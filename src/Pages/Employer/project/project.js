@@ -1,3 +1,4 @@
+import { useState } from "react";
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import "./project.css";
@@ -17,41 +18,25 @@ let data = {
     },
     {
       id: 2,
-      name: "Market Research",
-      department: "Marketing",
-      progress: 100,
-      start_date: "2022-10-01",
-      end_date: "2022-12-31",
-      budget: 50000,
-      expenses: 50000,
-      status: "Completed",
-    },
-    {
-      id: 3,
-      name: "Website Redesign",
-      department: "IT",
-      progress: 50,
-      start_date: "2023-01-01",
-      end_date: "2023-06-30",
-      budget: 150000,
-      expenses: 75000,
-      status: "In Progress",
-    },
-    {
-      id: 4,
-      name: "Software Upgrade",
-      department: "IT",
-      progress: 0,
-      start_date: "2023-04-01",
-      end_date: "2023-09-30",
-      budget: 100000,
-      expenses: 0,
-      status: "Not Started",
+      name: "Product Launch",
+      department: "Product Development",
+      progress: 20,
+      start_date: "2023-02-15",
+      end_date: "2023-05-31",
+      budget: 500000,
+      expenses: 250000,
+      status: "In Planning",
     },
   ],
 };
 
 export default function EmployerProject() {
+  const [currentProject, setCurrentProject] = useState(data.projects[0]);
+
+  const handleProjectClick = (project) => {
+    setCurrentProject(project);
+  };
+
   return (
     <section className="employer-container">
       <EmployerNav />
@@ -62,7 +47,11 @@ export default function EmployerProject() {
             <h3>Your current projects</h3>
             <ol id="employer-projects-list">
               {data.projects.map((project) => (
-                <li className="employer-projects-items" key={project.id}>
+                <li
+                  className="employer-projects-items"
+                  key={project.id}
+                  onClick={() => handleProjectClick(project)}
+                >
                   <span className="employer-projects-items-head">
                     {project.id}
                   </span>
@@ -75,16 +64,16 @@ export default function EmployerProject() {
           </div>
 
           <aside id="employer-projects-aside">
-            <h3>Project Vanilla</h3>
+            <h3>{currentProject.name}</h3>
             <div id="employer-projects-aside-info">
               <span>
-                <p>Department: </p>
+                <p>Department: {currentProject.department}</p>
               </span>
 
               <span id="projects-progress-bar">
                 <p>Project progress</p>
-                <p>50%</p>
-                <progress value={50} max={100} />
+                <p>{currentProject.progress}%</p>
+                <progress value={currentProject.progress} max={100} />
               </span>
             </div>
             <span id="project-buttons">
