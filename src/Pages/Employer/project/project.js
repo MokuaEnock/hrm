@@ -49,6 +49,28 @@ let data = {
       expenses: 500000,
       status: "In Planning",
     },
+    {
+      id: 8,
+      name: "Corporate Branding",
+      department: "Marketing",
+      progress: 80,
+      start_date: "2023-01-15",
+      end_date: "2023-04-30",
+      budget: 50000,
+      expenses: 40000,
+      status: "In Progress",
+    },
+    {
+      id: 9,
+      name: "Customer Retention",
+      department: "Sales",
+      progress: 30,
+      start_date: "2023-02-01",
+      end_date: "2023-06-30",
+      budget: 100000,
+      expenses: 75000,
+      status: "In Development",
+    },
   ],
 };
 
