@@ -16,9 +16,13 @@ export default function NewEmployerProject() {
               <Link to="/employer/projects">Back</Link>
             </span>
 
-            <form action="#" method="POST">
+            <form id="project-form">
+              <span className="project-form-header">
+                <h4>Project Information</h4>
+                <p>Set project refrence details</p>
+              </span>
+
               <div class="category-1">
-                <h2>Project Information</h2>
                 <label for="project-name">
                   <p>Project Name:</p>
                   <input
@@ -54,8 +58,12 @@ export default function NewEmployerProject() {
                 </label>
               </div>
 
+              <span className="project-form-header">
+                <h4>Department</h4>
+                <p>Set the departments repsonsible</p>
+              </span>
+
               <div class="category-2">
-                <h2>Organization and Department</h2>
                 <label for="organization-name">
                   <p>Organization Name:</p>
                   <input
@@ -77,8 +85,12 @@ export default function NewEmployerProject() {
                 </label>
               </div>
 
+              <span className="project-form-header">
+                <h4>Project management</h4>
+                <p>project management details</p>
+              </span>
+
               <div class="category-3">
-                <h2>Project Management</h2>
                 <label for="project-manager">
                   <p>Project Manager:</p>
                   <input
@@ -109,6 +121,11 @@ export default function NewEmployerProject() {
                   <textarea id="risks" name="risks" required></textarea>
                 </label>
               </div>
+
+              <span className="project-form-header">
+                <h4>Performance metrics</h4>
+                <p>Track metrics performance</p>
+              </span>
 
               <div class="category-4">
                 <h2>Performance Metrics</h2>
