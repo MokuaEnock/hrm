@@ -2,7 +2,7 @@ import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import "./new.css";
 import "./project.css";
-
+import { Link } from "react-router-dom";
 export default function NewEmployerProject() {
   return (
     <section className="employer-container">
@@ -11,7 +11,132 @@ export default function NewEmployerProject() {
         <EmployerHead message={"Manage your projects"} />
         <section id="employer-project-cont">
           <div id="employer-projects-main">
-            <h3>Your current projects</h3>
+            <span id="employer-projects-main-header">
+              <h3>Create new project</h3>
+              <Link to="/employer/projects">Back</Link>
+            </span>
+
+            <form action="#" method="POST">
+              <div class="category-1">
+                <h2>Project Information</h2>
+                <label for="project-name">
+                  <p>Project Name:</p>
+                  <input
+                    type="text"
+                    id="project-name"
+                    name="project-name"
+                    required
+                  />
+                </label>
+
+                <label for="project-description">
+                  <p>Project Description:</p>
+                  <textarea
+                    id="project-description"
+                    name="project-description"
+                    required
+                  ></textarea>
+                </label>
+
+                <label for="start-date">
+                  <p>Start Date:</p>
+                  <input
+                    type="date"
+                    id="start-date"
+                    name="start-date"
+                    required
+                  />
+                </label>
+
+                <label for="end-date">
+                  <p>End Date:</p>
+                  <input type="date" id="end-date" name="end-date" required />
+                </label>
+              </div>
+
+              <div class="category-2">
+                <h2>Organization and Department</h2>
+                <label for="organization-name">
+                  <p>Organization Name:</p>
+                  <input
+                    type="text"
+                    id="organization-name"
+                    name="organization-name"
+                    required
+                  />
+                </label>
+
+                <label for="department-name">
+                  <p>Department Name:</p>
+                  <input
+                    type="text"
+                    id="department-name"
+                    name="department-name"
+                    required
+                  />
+                </label>
+              </div>
+
+              <div class="category-3">
+                <h2>Project Management</h2>
+                <label for="project-manager">
+                  <p>Project Manager:</p>
+                  <input
+                    type="text"
+                    id="project-manager"
+                    name="project-manager"
+                    required
+                  />
+                </label>
+
+                <label for="budget">
+                  <p>Budget:</p>
+                  <input type="number" id="budget" name="budget" required />
+                </label>
+
+                <label for="timeline">
+                  <p>Timeline:</p>
+                  <input type="text" id="timeline" name="timeline" required />
+                </label>
+
+                <label for="resources">
+                  <p>Resources Required:</p>
+                  <textarea id="resources" name="resources" required></textarea>
+                </label>
+
+                <label for="risks">
+                  <p>Risks and Challenges:</p>
+                  <textarea id="risks" name="risks" required></textarea>
+                </label>
+              </div>
+
+              <div class="category-4">
+                <h2>Performance Metrics</h2>
+                <label for="goals">
+                  <p>Goals and Objectives:</p>
+                  <textarea id="goals" name="goals" required></textarea>
+                </label>
+
+                <label for="stakeholders">
+                  <p>Stakeholders Involved:</p>
+                  <input
+                    type="text"
+                    id="stakeholders"
+                    name="stakeholders"
+                    required
+                  />
+                </label>
+
+                <label for="success-metrics">
+                  <p>Success Metrics:</p>
+                  <textarea
+                    id="success-metrics"
+                    name="success-metrics"
+                    required
+                  ></textarea>
+                </label>
+              </div>
+            </form>
           </div>
         </section>
       </section>
