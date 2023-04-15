@@ -103,7 +103,7 @@ export default function EmployerHome() {
           </div>
 
           <Link
-            to={`/client/home/employees/${users.id}`}
+            to={`/employer/home/employees/${users.id}`}
             className="client-home-emps-child"
           >
             <span className="client-home-emps-number">22</span>
