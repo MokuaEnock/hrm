@@ -55,7 +55,15 @@ const users = [
 
 export default function EmployerEmployee() {
   let { id } = useParams();
-  console.log(id);
+
+  function handlePayslips() {
+    console.log("Payslips for all pay periods");
+  }
+
+  function handlePerformance() {
+    console.log("Performance report for all pay periods");
+  }
+
   return (
     <section className="employer-container">
       <EmployerNav />
@@ -80,8 +88,8 @@ export default function EmployerEmployee() {
 
             <div id="employee-aside-docs">
               <h5>Download documents</h5>
-              <button>Payslips</button>
-              <button>Performance report</button>
+              <button onClick={handlePayslips}>Payslips</button>
+              <button onClick={handlePerformance}>Performance report</button>
             </div>
           </aside>
         </section>
