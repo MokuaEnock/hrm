@@ -1,6 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
+import EmployerNav from "../components/Nav";
+import EmployerHead from "../components/head";
+
 const users = [
   {
     id: 1,
@@ -52,5 +55,12 @@ const users = [
 export default function EmployerEmployee() {
   let { id } = useParams();
 
-  return <main>This is {users.id}</main>;
+  return (
+    <section className="employer-container">
+      <EmployerNav />
+      <section id="employer-home">
+        <EmployerHead message={"Welcome to Enock's profile"} />
+      </section>
+    </section>
+  );
 }
