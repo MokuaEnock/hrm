@@ -85,6 +85,10 @@ function App() {
           <Route path="projects" element={<EmployerProject />} />
           <Route path="projects/new" element={<NewEmployerProject />} />
           <Route path="money/department/:id" element={<EmployerDept />} />
+          <Route
+            path="/employer/home/employee/:id"
+            element={<EmployerEmployees />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>

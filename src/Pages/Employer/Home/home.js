@@ -12,9 +12,51 @@ import DonutGraph from "../../../Components/charts/donut";
 
 export default function EmployerHome() {
   const users = [
-    { id: 1, name: "John Doe", email: "john.doe@example.com" },
-    { id: 2, name: "Jane Smith", email: "jane.smith@example.com" },
-    { id: 3, name: "Bob Johnson", email: "bob.johnson@example.com" },
+    {
+      id: 1,
+      name: "Enock Mokua",
+      gender: "Male",
+      totalDays: 123,
+      daysMissed: 9,
+      totalGrossEarnings: 10900,
+      totalNetEarnings: 7000,
+    },
+    {
+      id: 2,
+      name: "Jane Doe",
+      gender: "Female",
+      totalDays: 120,
+      daysMissed: 10,
+      totalGrossEarnings: 10500,
+      totalNetEarnings: 6800,
+    },
+    {
+      id: 3,
+      name: "Bob Johnson",
+      gender: "Male",
+      totalDays: 130,
+      daysMissed: 5,
+      totalGrossEarnings: 12000,
+      totalNetEarnings: 7800,
+    },
+    {
+      id: 4,
+      name: "Sarah Williams",
+      gender: "Female",
+      totalDays: 125,
+      daysMissed: 8,
+      totalGrossEarnings: 11500,
+      totalNetEarnings: 7500,
+    },
+    {
+      id: 5,
+      name: "Michael Lee",
+      gender: "Male",
+      totalDays: 128,
+      daysMissed: 7,
+      totalGrossEarnings: 11200,
+      totalNetEarnings: 7300,
+    },
   ];
 
   return (
@@ -103,7 +145,7 @@ export default function EmployerHome() {
           </div>
 
           <Link
-            to={`/employer/home/employees/${users.id}`}
+            to={`/employer/home/employee/${users.id}`}
             className="client-home-emps-child"
           >
             <span className="client-home-emps-number">22</span>

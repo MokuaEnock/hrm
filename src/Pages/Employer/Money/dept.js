@@ -2,7 +2,7 @@
 import "./dept.css";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import XLSX from "xlsx";
+import * as XLSX from "xlsx";
 
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
