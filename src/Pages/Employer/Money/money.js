@@ -27,6 +27,9 @@ let data = [
 ];
 
 export default function EmployerMoney() {
+  function handlePayslips() {}
+  
+  function handleAttendance() {}
   return (
     <section className="employer-container">
       <EmployerNav />

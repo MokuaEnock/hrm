@@ -2,6 +2,8 @@
 import "./dept.css";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import XLSX from "xlsx";
+
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import OnelineChart from "../../../Components/charts/oneline";
@@ -48,6 +50,34 @@ export default function EmployerDept() {
   const handleStartDateChange = (event) => {
     setStartDate(event.target.value);
   };
+
+  function handlePay() {
+    // Create a new workbook object
+    const workbook = XLSX.utils.book_new();
+
+    // Create the first sheet
+    const sheet1Data = [
+      ["Name", "Age", "City"],
+      ["John", 25, "New York"],
+      ["Jane", 30, "Los Angeles"],
+      ["Bob", 40, "Chicago"],
+    ];
+    const sheet1 = XLSX.utils.aoa_to_sheet(sheet1Data);
+    XLSX.utils.book_append_sheet(workbook, sheet1, "Sheet 1");
+
+    // Create the second sheet
+    const sheet2Data = [
+      ["Product", "Price"],
+      ["Apple", 1.99],
+      ["Banana", 0.99],
+      ["Orange", 1.49],
+    ];
+    const sheet2 = XLSX.utils.aoa_to_sheet(sheet2Data);
+    XLSX.utils.book_append_sheet(workbook, sheet2, "Sheet 2");
+
+    // Save the workbook as an Excel file
+    XLSX.writeFile(workbook, "example.xlsx");
+  }
 
   return (
     <section className="employer-container">
@@ -131,7 +161,9 @@ export default function EmployerDept() {
 
           <aside id="client-payment-cont2">
             <h4>Summary for this week</h4>
-            <button id="client-payment-button">Download Pay</button>
+            <button id="client-payment-button" onClick={handlePay}>
+              Download Pay
+            </button>
           </aside>
         </section>
       </section>
