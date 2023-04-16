@@ -148,29 +148,22 @@ export default function EmployerHome() {
             return (
               <Link
                 key={user.id}
-                to={`/employer/home/employee/${user.id}`}
+                to={`/employer/home/employees/${user.id}`}
                 className="client-home-emps-child"
               >
                 <span className="client-home-emps-number">{user.id}</span>
                 <span className="client-home-emps-name">{user.name}</span>
-                <span className="client-home-emps-sex">{user.gender}</span>{" "}
-                {/* Gender is not included in the users data */}
-                <span className="client-home-emps-days">
-                  {user.totalDays}
-                </span>{" "}
-                {/* Total days is not included in the users data */}
+                <span className="client-home-emps-sex">{user.gender}</span>
+                <span className="client-home-emps-days">{user.totalDays}</span>
                 <span className="client-home-emps-missed">
                   {user.daysMissed}
-                </span>{" "}
-                {/* Days missed is not included in the users data */}
+                </span>
                 <span className="client-home-emps-gross">
                   {user.totalGrossEarnings}
-                </span>{" "}
-                {/* Total gross earnings is not included in the users data */}
+                </span>
                 <span className="client-home-emps-net">
                   {user.totalNetEarnings}
-                </span>{" "}
-                {/* Total net earnings is not included in the users data */}
+                </span>
               </Link>
             );
           })}
