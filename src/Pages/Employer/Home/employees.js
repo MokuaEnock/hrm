@@ -89,8 +89,8 @@ export default function EmployerEmployee() {
 
             <div id="employee-aside-docs">
               <h5>Download documents</h5>
-              <Payslip />
-              {/* <button onClick={handlePayslips}>Payslips</button> */}
+              {/* <Payslip /> */}
+              <button onClick={handlePayslips}>Payslips</button>
               <button onClick={handlePerformance}>Performance report</button>
             </div>
           </aside>

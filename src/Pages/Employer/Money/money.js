@@ -27,9 +27,13 @@ let data = [
 ];
 
 export default function EmployerMoney() {
-  function handlePayslips() {}
-  
-  function handleAttendance() {}
+  function handlePayslips() {
+    console.log("Download payslips");
+  }
+
+  function handleAttendance() {
+    console.log("Download Attendance");
+  }
   return (
     <section className="employer-container">
       <EmployerNav />
@@ -70,8 +74,10 @@ export default function EmployerMoney() {
 
             <span id="client-payment-downloads">
               <h3>Download data Sheets</h3>
-              <button>Download Payslips</button>
-              <button>Download Attendance Sheets</button>
+              <button onClick={handlePayslips}>Download Payslips</button>
+              <button onClick={handleAttendance}>
+                Download Attendance Sheets
+              </button>
             </span>
           </aside>
         </section>
