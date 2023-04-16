@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "./employees.css";
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
+import RatingGraph from "../../../Components/charts/rating";
 
 const users = [
   {
@@ -71,7 +72,9 @@ export default function EmployerEmployee() {
           <aside id="employer-employee-cont-aside">
             <div id="employee-aside-rating">
               <h5>Rating</h5>
-              <div></div>
+              <div>
+                <RatingGraph rating={78} deficit={22} />
+              </div>
               <p>Average Employee</p>
             </div>
 
