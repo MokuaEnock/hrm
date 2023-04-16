@@ -115,27 +115,7 @@ export default function EmployerEmployees() {
         }
       );
 
-      let employees = extractedData[Object.keys(extractedData)[1]].map(
-        (emp) => {
-          return {
-            ...emp,
-            employer_id: employerId,
-          };
-        }
-      );
-
-      // fetch("http://localhost:3000/departments_all", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(departments),
-      // })
-      //   .then((response) => response.json())
-      //   .then((data) => console.log(data))
-      //   .catch((error) => console.error(error));
-
-      fetch("http://localhost:3000/employees_all", {
+      fetch("http://localhost:3000/departments_all", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -143,10 +123,31 @@ export default function EmployerEmployees() {
         body: JSON.stringify(departments),
       })
         .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+          console.log(data);
+          let employees = extractedData[Object.keys(extractedData)[1]].map(
+            (emp) => {
+              return {
+                ...emp,
+                employer_id: employerId,
+              };
+            }
+          );
+
+          fetch("http://localhost:3000/employees_all", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(employees),
+          })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((error) => console.error(error));
+        })
         .catch((error) => console.error(error));
 
-      return employees;
+      return departments;
     });
   }
 
