@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-
+import "./employees.css";
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 
@@ -60,6 +60,22 @@ export default function EmployerEmployee() {
       <EmployerNav />
       <section id="employer-home">
         <EmployerHead message={"Welcome to Enock's profile"} />
+        <section id="employer-employe-cont">
+          <div id="employer-employee-cont-main"></div>
+          <aside id="employer-employee-cont-aside">
+            <div id="employee-aside-rating">
+              <h5>Rating</h5>
+              <div></div>
+              <p>Average Employee</p>
+            </div>
+
+            <div id="employee-aside-docs">
+              <h5>Download documents</h5>
+              <button>Payslips</button>
+              <button>Performance report</button>
+            </div>
+          </aside>
+        </section>
       </section>
     </section>
   );

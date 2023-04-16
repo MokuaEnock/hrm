@@ -1,0 +1,76 @@
+#employer-employe-cont {
+  width: 100%;
+  height: 90%;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#employer-employe-cont > * {
+  height: 100%;
+  border: thin solid black;
+}
+
+#employer-employee-cont-main {
+  width: 75%;
+}
+
+#employer-employee-cont-aside {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  width: 25%;
+  background-color: var(--tertiary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#employee-aside-rating {
+  width: 95%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#employee-aside-rating > h5,
+#employee-aside-docs > h5 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  width: 100%;
+  text-align: center;
+  font-weight: light;
+}
+#employee-aside-rating > div {
+}
+#employee-aside-rating > p {
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  text-align: center;
+  width: 100%;
+  font-weight: light;
+}
+
+#employee-aside-docs {
+  width: 95%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#employee-aside-docs > button {
+  border: thin solid transparent;
+  width: 80%;
+  height: 7vh;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--tertiary-color);
+}
