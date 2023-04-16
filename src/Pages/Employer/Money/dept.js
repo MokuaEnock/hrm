@@ -142,7 +142,29 @@ export default function EmployerDept() {
   //   XLSX.writeFile(workbook, "example.xlsx");
   // }
 
-  function handlePay(headers, data, sheetName) {
+  const handlePay = () => {
+    const headers = [
+      "Payroll No",
+      "PF NO.",
+      "NAME",
+      "ACCOUNT NO.",
+      "BANK CODE",
+      "Branch CODE",
+      "Amount",
+      "bank_name",
+    ];
+
+    const data = pay_data.map((pay) => [
+      pay["Payroll No"],
+      pay["PF NO."],
+      pay["NAME"],
+      pay["ACCOUNT NO."],
+      pay["BANK CODE"],
+      pay["Branch CODE"],
+      pay.Amount,
+      pay.bank_name,
+    ]);
+
     try {
       // Create a new workbook object
       const workbook = XLSX.utils.book_new();
@@ -152,14 +174,15 @@ export default function EmployerDept() {
       const sheet = XLSX.utils.aoa_to_sheet(sheetData);
 
       // Add the sheet to the workbook
-      XLSX.utils.book_append_sheet(workbook, sheet, sheetName);
+      XLSX.utils.book_append_sheet(workbook, sheet, "Sheet 1");
 
       // Save the workbook as an Excel file
-      XLSX.writeFile(workbook, `${sheetName}.xlsx`);
+      XLSX.writeFile(workbook, "example.xlsx");
     } catch (error) {
       console.error("Failed to create Excel file:", error);
     }
-  }
+  };
+
   return (
     <section className="employer-container">
       <EmployerNav />
