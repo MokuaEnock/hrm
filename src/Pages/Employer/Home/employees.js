@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./employees.css";
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
@@ -54,14 +54,20 @@ const users = [
 
 export default function EmployerEmployee() {
   let { id } = useParams();
-
+  console.log(id);
   return (
     <section className="employer-container">
       <EmployerNav />
       <section id="employer-home">
         <EmployerHead message={"Welcome to Enock's profile"} />
         <section id="employer-employe-cont">
-          <div id="employer-employee-cont-main"></div>
+          <div id="employer-employee-cont-main">
+            <div id="employee-main-header">
+              <h3>Enock Mokua</h3>
+              <Link to="/employer/home">Back</Link>
+            </div>
+          </div>
+
           <aside id="employer-employee-cont-aside">
             <div id="employee-aside-rating">
               <h5>Rating</h5>
