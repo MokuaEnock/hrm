@@ -8,6 +8,79 @@ import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import OnelineChart from "../../../Components/charts/oneline";
 
+let pay_data = [
+  {
+    "Payroll No": "001",
+    "PF NO.": "PF001",
+    NAME: "John Doe",
+    "ACCOUNT NO.": "1234567890",
+    "BANK CODE": "BNK001",
+    "Branch CODE": "BR001",
+    Amount: 5000,
+    bank_name: "Bank of America",
+  },
+  {
+    "Payroll No": "002",
+    "PF NO.": "PF002",
+    NAME: "Jane Smith",
+    "ACCOUNT NO.": "2345678901",
+    "BANK CODE": "BNK002",
+    "Branch CODE": "BR002",
+    Amount: 6000,
+    bank_name: "Chase Bank",
+  },
+  {
+    "Payroll No": "003",
+    "PF NO.": "PF003",
+    NAME: "Bob Johnson",
+    "ACCOUNT NO.": "3456789012",
+    "BANK CODE": "BNK003",
+    "Branch CODE": "BR003",
+    Amount: 7000,
+    bank_name: "Wells Fargo",
+  },
+  {
+    "Payroll No": "004",
+    "PF NO.": "PF004",
+    NAME: "Sarah Lee",
+    "ACCOUNT NO.": "4567890123",
+    "BANK CODE": "BNK004",
+    "Branch CODE": "BR004",
+    Amount: 8000,
+    bank_name: "Citibank",
+  },
+  {
+    "Payroll No": "005",
+    "PF NO.": "PF005",
+    NAME: "David Kim",
+    "ACCOUNT NO.": "5678901234",
+    "BANK CODE": "BNK005",
+    "Branch CODE": "BR005",
+    Amount: 9000,
+    bank_name: "HSBC",
+  },
+  {
+    "Payroll No": "006",
+    "PF NO.": "PF006",
+    NAME: "Emily Wong",
+    "ACCOUNT NO.": "6789012345",
+    "BANK CODE": "BNK006",
+    "Branch CODE": "BR006",
+    Amount: 10000,
+    bank_name: "Barclays",
+  },
+  {
+    "Payroll No": "007",
+    "PF NO.": "PF007",
+    NAME: "Michael Chen",
+    "ACCOUNT NO.": "7890123456",
+    "BANK CODE": "BNK007",
+    "Branch CODE": "BR007",
+    Amount: 11000,
+    bank_name: "TD Bank",
+  },
+];
+
 export default function EmployerDept() {
   let { id } = useParams();
   // const [employeeId, setEmployeeId] = useState("");
@@ -51,34 +124,42 @@ export default function EmployerDept() {
     setStartDate(event.target.value);
   };
 
-  function handlePay() {
-    // Create a new workbook object
-    const workbook = XLSX.utils.book_new();
+  // function handlePay() {
+  //   // Create a new workbook object
+  //   const workbook = XLSX.utils.book_new();
 
-    // Create the first sheet
-    const sheet1Data = [
-      ["Name", "Age", "City"],
-      ["John", 25, "New York"],
-      ["Jane", 30, "Los Angeles"],
-      ["Bob", 40, "Chicago"],
-    ];
-    const sheet1 = XLSX.utils.aoa_to_sheet(sheet1Data);
-    XLSX.utils.book_append_sheet(workbook, sheet1, "Sheet 1");
+  //   // Create the first sheet
+  //   const sheet1Data = [
+  //     ["Name", "Age", "City"],
+  //     ["John", 25, "New York"],
+  //     ["Jane", 30, "Los Angeles"],
+  //     ["Bob", 40, "Chicago"],
+  //   ];
+  //   const sheet1 = XLSX.utils.aoa_to_sheet(sheet1Data);
+  //   XLSX.utils.book_append_sheet(workbook, sheet1, "Sheet 1");
 
-    // Create the second sheet
-    const sheet2Data = [
-      ["Product", "Price"],
-      ["Apple", 1.99],
-      ["Banana", 0.99],
-      ["Orange", 1.49],
-    ];
-    const sheet2 = XLSX.utils.aoa_to_sheet(sheet2Data);
-    XLSX.utils.book_append_sheet(workbook, sheet2, "Sheet 2");
+  //   // Save the workbook as an Excel file
+  //   XLSX.writeFile(workbook, "example.xlsx");
+  // }
 
-    // Save the workbook as an Excel file
-    XLSX.writeFile(workbook, "example.xlsx");
+  function handlePay(headers, data, sheetName) {
+    try {
+      // Create a new workbook object
+      const workbook = XLSX.utils.book_new();
+
+      // Create the sheet data
+      const sheetData = [headers, ...data];
+      const sheet = XLSX.utils.aoa_to_sheet(sheetData);
+
+      // Add the sheet to the workbook
+      XLSX.utils.book_append_sheet(workbook, sheet, sheetName);
+
+      // Save the workbook as an Excel file
+      XLSX.writeFile(workbook, `${sheetName}.xlsx`);
+    } catch (error) {
+      console.error("Failed to create Excel file:", error);
+    }
   }
-
   return (
     <section className="employer-container">
       <EmployerNav />

@@ -1,3 +1,4 @@
+import Payslip from "../../../Components/finance/payslip";
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import "./money.css";
@@ -34,6 +35,7 @@ export default function EmployerMoney() {
   function handleAttendance() {
     console.log("Download Attendance");
   }
+
   return (
     <section className="employer-container">
       <EmployerNav />
@@ -74,6 +76,7 @@ export default function EmployerMoney() {
 
             <span id="client-payment-downloads">
               <h3>Download data Sheets</h3>
+              {/* <Payslip/> */}
               <button onClick={handlePayslips}>Download Payslips</button>
               <button onClick={handleAttendance}>
                 Download Attendance Sheets
