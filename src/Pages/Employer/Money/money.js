@@ -77,10 +77,9 @@ export default function EmployerMoney() {
             <span id="client-payment-downloads">
               <h3>Download data Sheets</h3>
               {/* <Payslip/> */}
-              <button onClick={handlePayslips}>Download Payslips</button>
-              <button onClick={handleAttendance}>
-                Download Attendance Sheets
-              </button>
+              <button onClick={handlePayslips}>Payslips</button>
+              <button onClick={handleAttendance}>Attendance Sheets</button>
+              <button onClick={handleAttendance}>Payroll</button>
             </span>
           </aside>
         </section>
