@@ -144,18 +144,36 @@ export default function EmployerHome() {
             <span className="client-home-emps-net">Total Net Earnings</span>
           </div>
 
-          <Link
-            to={`/employer/home/employee/${users.id}`}
-            className="client-home-emps-child"
-          >
-            <span className="client-home-emps-number">22</span>
-            <span className="client-home-emps-name">Enock Mokua</span>
-            <span className="client-home-emps-sex">Male</span>
-            <span className="client-home-emps-days">123</span>
-            <span className="client-home-emps-missed">9</span>
-            <span className="client-home-emps-gross">10900</span>
-            <span className="client-home-emps-net">7000</span>
-          </Link>
+          {users.map((user) => {
+            return (
+              <Link
+                key={user.id}
+                to={`/employer/home/employee/${user.id}`}
+                className="client-home-emps-child"
+              >
+                <span className="client-home-emps-number">{user.id}</span>
+                <span className="client-home-emps-name">{user.name}</span>
+                <span className="client-home-emps-sex">{user.gender}</span>{" "}
+                {/* Gender is not included in the users data */}
+                <span className="client-home-emps-days">
+                  {user.totalDays}
+                </span>{" "}
+                {/* Total days is not included in the users data */}
+                <span className="client-home-emps-missed">
+                  {user.daysMissed}
+                </span>{" "}
+                {/* Days missed is not included in the users data */}
+                <span className="client-home-emps-gross">
+                  {user.totalGrossEarnings}
+                </span>{" "}
+                {/* Total gross earnings is not included in the users data */}
+                <span className="client-home-emps-net">
+                  {user.totalNetEarnings}
+                </span>{" "}
+                {/* Total net earnings is not included in the users data */}
+              </Link>
+            );
+          })}
         </div>
       </section>
     </section>
