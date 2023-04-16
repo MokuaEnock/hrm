@@ -3,7 +3,7 @@ import React from "react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import { FaDownload } from "react-icons/fa";
-import logo from "../../Assets/unnamed.png";
+import logo from "../../Assets/logoHRTech .jpg";
 
 export default function Payslip() {
   let generatePayslip = () => {
@@ -11,7 +11,7 @@ export default function Payslip() {
     doc.setFontSize(10);
 
     // add logo at top right corner
-    doc.addImage(logo, "PNG", 230, 5, 50, 15);
+    doc.addImage(logo, "PNG", 220, -15, 70, 70);
 
     // employer heading
     doc.text(
@@ -76,11 +76,17 @@ export default function Payslip() {
           "30000",
         ],
       ],
+      theme: "grid",
+      styles: {
+        textColor: [0, 0, 0],
+        fillColor: [255, 255, 255],
+        cellPadding: 2,
+      },
     });
 
     // add employee data table 2
     doc.autoTable({
-      startY: 55,
+      startY: 70,
       head: [
         [
           "DoubleOT Pay",
@@ -95,6 +101,14 @@ export default function Payslip() {
         ],
       ],
       body: [["10", "20", "30", "40", "50", "60", "70", "80", "90"]],
+      theme: "grid",
+      styles: {
+        textColor: [0, 0, 0],
+        fillColor: [255, 255, 255],
+        cellPadding: 2,
+      },
+      headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0] },
+      tableLineWidth: 0,
     });
 
     doc.output("dataurlnewwindow");

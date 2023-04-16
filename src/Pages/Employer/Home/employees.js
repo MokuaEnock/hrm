@@ -4,6 +4,7 @@ import "./employees.css";
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import RatingGraph from "../../../Components/charts/rating";
+import Payslip from "../../../Components/finance/payslip";
 
 const users = [
   {
@@ -88,7 +89,8 @@ export default function EmployerEmployee() {
 
             <div id="employee-aside-docs">
               <h5>Download documents</h5>
-              <button onClick={handlePayslips}>Payslips</button>
+              <Payslip />
+              {/* <button onClick={handlePayslips}>Payslips</button> */}
               <button onClick={handlePerformance}>Performance report</button>
             </div>
           </aside>
