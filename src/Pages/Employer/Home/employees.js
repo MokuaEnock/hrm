@@ -53,7 +53,7 @@ export default function EmployerEmployee() {
             <div id="employee-aside-rating">
               <h5>Rating</h5>
               <div>
-                <RatingGraph rating={78} deficit={22} />
+                <RatingGraph rating={rating} deficit={100 - rating} />
               </div>
               <p>Average Employee</p>
             </div>
