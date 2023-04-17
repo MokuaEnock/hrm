@@ -1,4 +1,5 @@
 import Payslip from "../../../Components/finance/payslip";
+import React, { useState, useEffect } from "react";
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import "./money.css";
@@ -28,6 +29,24 @@ let data = [
 ];
 
 export default function EmployerMoney() {
+  let [departments, setDepartments] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/employers/1")
+      .then((res) => res.json())
+      .then((data) => {
+        setDepartments(data.departments);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch data:", error);
+        setIsLoading(false);
+      });
+  }, []);
+
+  console.log(departments);
+
   function handlePayslips() {
     console.log("Download payslips");
   }
@@ -44,20 +63,24 @@ export default function EmployerMoney() {
         <section id="client-payment-cont">
           <div id="client-payment-cont1">
             <h3>Release Employees Salaries</h3>
-            {data.map((department) => (
-              <Link
-                className="payment-list"
-                key={department.department_id}
-                to={`/employer/money/department/${department.department_id}`}
-              >
-                <span className="payment-list-head">
-                  {department.department_id}
-                </span>
-                <span className="payment-list-body">
-                  <p>{department.department_name}</p>
-                </span>
-              </Link>
-            ))}
+            {isLoading ? (
+              <p>Loading...</p> // Show loading indicator while data is being fetched
+            ) : (
+              departments.map((department) => (
+                <Link
+                  className="payment-list"
+                  key={department.id}
+                  to={`/employer/money/department/${department.id}`}
+                >
+                  <span className="payment-list-head">
+                    {department.department_id}
+                  </span>
+                  <span className="payment-list-body">
+                    <p>{department.name}</p>
+                  </span>
+                </Link>
+              ))
+            )}
           </div>
 
           <aside id="client-payment-cont2">
