@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
@@ -11,6 +11,9 @@ import LineChart from "../../../Components/charts/line";
 import DonutGraph from "../../../Components/charts/donut";
 
 export default function EmployerHome() {
+  let [allEmployees, setAllEmployees] = useState();
+  let [totalEmployees, setTotalEmployees] = useState();
+
   const users = [
     {
       id: 1,
@@ -58,6 +61,28 @@ export default function EmployerHome() {
       totalNetEarnings: 7300,
     },
   ];
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const [allEmployees, totalEmployees] = await Promise.all([
+          fetch("http://localhost:3000/all_employees/1").then((response) =>
+            response.json()
+          ),
+          fetch("http://localhost:3000/total_employees/1").then((response) =>
+            response.json()
+          ),
+        ]);
+        setAllEmployees(allEmployees);
+        setTotalEmployees(totalEmployees);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, []);
+
+  console.log(allEmployees, totalEmployees);
 
   return (
     <section className="employer-container">
