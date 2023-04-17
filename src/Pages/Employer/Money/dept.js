@@ -6,7 +6,7 @@ import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import JSZip from "jszip";
-
+import logo from "../../../Assets/logoHRTech .jpg";
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import OnelineChart from "../../../Components/charts/oneline";
@@ -163,23 +163,38 @@ export default function EmployerDept() {
       },
     ];
 
-    let headers = [
-      "Basic Pay",
-      ...sample[0].week_one,
-      "Extra Pay 1",
-      ...sample[0].week_two,
+    let week_pay = sample[0].week_pay;
+    let half = Math.ceil(week_pay.length / 2);
+    let week_one_pay = week_pay.slice(0, half);
+    let week_two_pay = week_pay.slice(-half);
+
+    let bodies1 = [sample[0].basic_salary, ...week_one_pay, ...week_two_pay];
+    let bodies2 = [
+      sample[0].gross_salary,
+      sample[0].nssf_deduction,
+      sample[0].nhif,
+      sample[0].paye,
+      sample[0].sacco,
+      sample[0].net_salary,
     ];
+
     let headers2 = ["Gross Pay", "NSSF", "NHF", "PAYE", "SACCO", "Net Pay"];
 
-    console.log(headers);
-    console.log(headers2);
-
+    console.log(bodies1, bodies2);
     // const zip = new JSZip();
     // const promises = [];
 
     // for (const data of payslipData) {
     //   const doc = new jsPDF("landscape");
     //   doc.setFontSize(10);
+
+    //   let headers = [
+    //     "Basic Pay",
+    //     ...data.week_one,
+    //     "Extra Pay 1",
+    //     ...data.week_two,
+    //   ];
+    //   let headers2 = ["Gross Pay", "NSSF", "NHF", "PAYE", "SACCO", "Net Pay"];
 
     //   // add logo at top right corner
     //   doc.addImage(logo, "PNG", 220, -15, 70, 70);

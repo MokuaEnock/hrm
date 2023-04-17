@@ -73,7 +73,7 @@ export default function EmployerMoney() {
                   to={`/employer/money/department/${department.id}`}
                 >
                   <span className="payment-list-head">
-                    {department.department_id}
+                    {department.id}
                   </span>
                   <span className="payment-list-body">
                     <p>{department.name}</p>
