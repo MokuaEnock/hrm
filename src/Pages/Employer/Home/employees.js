@@ -55,12 +55,11 @@ export default function EmployerEmployee() {
               <div>
                 <RatingGraph rating={rating} deficit={100 - rating} />
               </div>
-              <p>Average Employee</p>
+              <p>Average Rating: {rating}</p>
             </div>
 
             <div id="employee-aside-docs">
               <h5>Download documents</h5>
-              {/* <Payslip /> */}
               <button onClick={handlePayslips}>Payslips</button>
               <button onClick={handlePerformance}>Performance report</button>
             </div>

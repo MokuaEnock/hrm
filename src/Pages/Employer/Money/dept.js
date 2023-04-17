@@ -83,9 +83,9 @@ let pay_data = [
 
 export default function EmployerDept() {
   let { id } = useParams();
-  // const [employeeId, setEmployeeId] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  let [data, setData] = useState();
 
   function handleSetPay(e) {
     e.preventDefault();
@@ -124,28 +124,16 @@ export default function EmployerDept() {
     setStartDate(event.target.value);
   };
 
-  // function handlePay() {
-  //   // Create a new workbook object
-  //   const workbook = XLSX.utils.book_new();
-
-  //   // Create the first sheet
-  //   const sheet1Data = [
-  //     ["Name", "Age", "City"],
-  //     ["John", 25, "New York"],
-  //     ["Jane", 30, "Los Angeles"],
-  //     ["Bob", 40, "Chicago"],
-  //   ];
-  //   const sheet1 = XLSX.utils.aoa_to_sheet(sheet1Data);
-  //   XLSX.utils.book_append_sheet(workbook, sheet1, "Sheet 1");
-
-  //   // Save the workbook as an Excel file
-  //   XLSX.writeFile(workbook, "example.xlsx");
-  // }
-
   const handlePay = () => {
+    fetch("http://localhost:3000//download_pay/1")
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res);
+        console.log(res);
+      });
+
     const headers = [
       "Payroll No",
-      "PF NO.",
       "NAME",
       "ACCOUNT NO.",
       "BANK CODE",
@@ -154,14 +142,13 @@ export default function EmployerDept() {
       "bank_name",
     ];
 
-    const data = pay_data.map((pay) => [
-      pay["Payroll No"],
-      pay["PF NO."],
-      pay["NAME"],
-      pay["ACCOUNT NO."],
-      pay["BANK CODE"],
-      pay["Branch CODE"],
-      pay.Amount,
+    const dat = data.map((pay) => [
+      pay.payroll_no,
+      pay.name,
+      pay.bank_account,
+      pay.bank_code,
+      pay.branch_code,
+      pay.amount,
       pay.bank_name,
     ]);
 
@@ -170,7 +157,7 @@ export default function EmployerDept() {
       const workbook = XLSX.utils.book_new();
 
       // Create the sheet data
-      const sheetData = [headers, ...data];
+      const sheetData = [headers, ...dat];
       const sheet = XLSX.utils.aoa_to_sheet(sheetData);
 
       // Add the sheet to the workbook
@@ -182,6 +169,8 @@ export default function EmployerDept() {
       console.error("Failed to create Excel file:", error);
     }
   };
+
+  // console.log(data);
 
   return (
     <section className="employer-container">
