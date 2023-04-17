@@ -5,8 +5,6 @@ import { useParams } from "react-router-dom";
 import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import JSZip from "jszip";
-import { saveAs } from "file-saver";
 
 import logo from "../../../Assets/logoHRTech .jpg";
 import EmployerNav from "../components/Nav";
@@ -21,7 +19,7 @@ export default function EmployerDept() {
   let [payslip, setPayslip] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/payslip/${id}`)
+    fetch(`http://localhost:3000/department_payslip/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setPayslip(data.payslips);
@@ -111,8 +109,7 @@ export default function EmployerDept() {
     }
   };
 
-  console.log(payslip);
-
+  // create payslips for department
   function handleSlips() {
     const doc = new jsPDF("landscape");
     doc.setFontSize(10);
@@ -153,7 +150,7 @@ export default function EmployerDept() {
       doc.autoTable({
         startY: 30,
         head: [headers],
-        body: [[data.basic_salary, ...week_one_pay, 0,...week_two_pay]],
+        body: [[data.basic_salary, ...week_one_pay, 0, ...week_two_pay]],
         theme: "grid",
         styles: {
           textColor: [0, 0, 0],
