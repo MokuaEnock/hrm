@@ -6,7 +6,7 @@ import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import JSZip from "jszip";
-import { saveAs } from 'file-saver';
+import { saveAs } from "file-saver";
 
 import logo from "../../../Assets/logoHRTech .jpg";
 import EmployerNav from "../components/Nav";
@@ -114,13 +114,11 @@ export default function EmployerDept() {
   console.log(payslip);
 
   function handleSlips() {
-    const zip = new JSZip();
-    const promises = [];
+    const doc = new jsPDF("landscape");
+    doc.setFontSize(10);
+    let currentPage = 1;
 
     for (const data of payslip) {
-      const doc = new jsPDF("landscape");
-      doc.setFontSize(10);
-
       let headers = [
         "Basic Pay",
         ...data.week_one,
@@ -134,15 +132,9 @@ export default function EmployerDept() {
       let week_one_pay = week_pay.slice(0, half);
       let week_two_pay = week_pay.slice(-half);
 
-      let bodies1 = [data.basic_salary, ...week_one_pay, ...week_two_pay];
-      let bodies2 = [
-        data.gross_salary,
-        data.nssf_deduction,
-        data.nhif,
-        data.paye,
-        data.sacco,
-        data.net_salary,
-      ];
+      if (currentPage > 1) {
+        doc.addPage();
+      }
 
       // add logo at top right corner
       doc.addImage(logo, "PNG", 220, -15, 70, 70);
@@ -161,7 +153,7 @@ export default function EmployerDept() {
       doc.autoTable({
         startY: 30,
         head: [headers],
-        body: [bodies1],
+        body: [[data.basic_salary, ...week_one_pay, ...week_two_pay]],
         theme: "grid",
         styles: {
           textColor: [0, 0, 0],
@@ -174,7 +166,16 @@ export default function EmployerDept() {
       doc.autoTable({
         startY: 70,
         head: [headers2],
-        body: [bodies2],
+        body: [
+          [
+            data.gross_salary,
+            data.nssf_deduction,
+            data.nhif,
+            data.paye,
+            data.sacco,
+            data.net_salary,
+          ],
+        ],
         theme: "grid",
         styles: {
           textColor: [0, 0, 0],
@@ -185,16 +186,12 @@ export default function EmployerDept() {
         tableLineWidth: 0,
       });
 
-      const pdfData = doc.output("arraybuffer");
-      zip.file(`${data.employee_name}.pdf`, pdfData);
-      promises.push(pdfData);
+      currentPage++;
     }
 
-    Promise.all(promises).then(() => {
-      zip.generateAsync({ type: "blob" }).then((content) => {
-        saveAs(content, "payslips.zip");
-      });
-    });
+    // Save the PDF and open it in a new tab
+    doc.save("payslips.pdf");
+    window.open(doc.output("bloburl"), "_blank");
   }
 
   return (

@@ -5,29 +5,6 @@ import EmployerHead from "../components/head";
 import "./money.css";
 import { Link } from "react-router-dom";
 
-let data = [
-  {
-    department_id: "1001",
-    department_name: "Sales",
-  },
-  {
-    department_id: "1002",
-    department_name: "Marketing",
-  },
-  {
-    department_id: "1003",
-    department_name: "Finance",
-  },
-  {
-    department_id: "1004",
-    department_name: "Human Resources",
-  },
-  {
-    department_id: "1005",
-    department_name: "Information Technology",
-  },
-];
-
 export default function EmployerMoney() {
   let [departments, setDepartments] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -72,9 +49,7 @@ export default function EmployerMoney() {
                   key={department.id}
                   to={`/employer/money/department/${department.id}`}
                 >
-                  <span className="payment-list-head">
-                    {department.id}
-                  </span>
+                  <span className="payment-list-head">{department.id}</span>
                   <span className="payment-list-body">
                     <p>{department.name}</p>
                   </span>
