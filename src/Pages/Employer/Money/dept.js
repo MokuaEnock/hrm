@@ -137,7 +137,7 @@ export default function EmployerDept() {
       }
 
       // add logo at top right corner
-      doc.addImage(logo, "PNG", 220, -15, 70, 70);
+      doc.addImage(logo, "PNG", 240, 5, 45, 25);
 
       // employer heading
       doc.text(
@@ -153,7 +153,7 @@ export default function EmployerDept() {
       doc.autoTable({
         startY: 30,
         head: [headers],
-        body: [[data.basic_salary, ...week_one_pay, ...week_two_pay]],
+        body: [[data.basic_salary, ...week_one_pay, 0,...week_two_pay]],
         theme: "grid",
         styles: {
           textColor: [0, 0, 0],
@@ -164,7 +164,7 @@ export default function EmployerDept() {
 
       // add employee data table 2
       doc.autoTable({
-        startY: 70,
+        startY: 50,
         head: [headers2],
         body: [
           [
@@ -190,7 +190,7 @@ export default function EmployerDept() {
     }
 
     // Save the PDF and open it in a new tab
-    doc.save("payslips.pdf");
+    // doc.save("payslips.pdf");
     window.open(doc.output("bloburl"), "_blank");
   }
 
