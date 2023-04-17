@@ -5,7 +5,7 @@ import "jspdf-autotable";
 import { FaDownload } from "react-icons/fa";
 import logo from "../../Assets/logoHRTech .jpg";
 
-export default function Payslip() {
+export default function Payslip({ headers, bodies, headers2, bodies2 }) {
   let generatePayslip = () => {
     let doc = new jsPDF("landscape");
     doc.setFontSize(10);
@@ -26,56 +26,8 @@ export default function Payslip() {
     // add employee data table
     doc.autoTable({
       startY: 30,
-      head: [
-        [
-          "Basic Salary",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "ExtraPay1",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "ExtraPay2",
-          "Late Payment",
-          "Incentives",
-          "NormaIOT",
-        ],
-      ],
-      body: [
-        [
-          "100",
-          "200",
-          "300",
-          "400",
-          "500",
-          "600",
-          "700",
-          "800",
-          "900",
-          "1000",
-          "2000",
-          "3000",
-          "4000",
-          "5000",
-          "6000",
-          "7000",
-          "8000",
-          "9000",
-          "10000",
-          "20000",
-          "30000",
-        ],
-      ],
+      head: [headers],
+      body: [bodies],
       theme: "grid",
       styles: {
         textColor: [0, 0, 0],
@@ -87,20 +39,8 @@ export default function Payslip() {
     // add employee data table 2
     doc.autoTable({
       startY: 70,
-      head: [
-        [
-          "DoubleOT Pay",
-          "Gross Pay",
-          "NSSF",
-          "NHIF",
-          "PAYE",
-          "Sacco",
-          "Recovery",
-          "Arreas",
-          "Net Pay",
-        ],
-      ],
-      body: [["10", "20", "30", "40", "50", "60", "70", "80", "90"]],
+      head: [headers2],
+      body: [bodies2],
       theme: "grid",
       styles: {
         textColor: [0, 0, 0],

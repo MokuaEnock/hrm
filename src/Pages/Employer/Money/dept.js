@@ -97,6 +97,10 @@ export default function EmployerDept() {
     }
   };
 
+  function handleSlips() {
+    console.log("slips");
+  }
+
   return (
     <section className="employer-container">
       <EmployerNav />
@@ -181,6 +185,9 @@ export default function EmployerDept() {
             <h4>Summary for this week</h4>
             <button id="client-payment-button" onClick={handlePay}>
               Download Pay
+            </button>
+            <button id="client-payment-button" onClick={handleSlips}>
+              Download Payslips
             </button>
           </aside>
         </section>
