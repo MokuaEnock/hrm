@@ -14,54 +14,6 @@ export default function EmployerHome() {
   let [allEmployees, setAllEmployees] = useState();
   let [totalEmployees, setTotalEmployees] = useState();
 
-  const users = [
-    {
-      id: 1,
-      name: "Enock Mokua",
-      gender: "Male",
-      totalDays: 123,
-      daysMissed: 9,
-      totalGrossEarnings: 10900,
-      totalNetEarnings: 7000,
-    },
-    {
-      id: 2,
-      name: "Jane Doe",
-      gender: "Female",
-      totalDays: 120,
-      daysMissed: 10,
-      totalGrossEarnings: 10500,
-      totalNetEarnings: 6800,
-    },
-    {
-      id: 3,
-      name: "Bob Johnson",
-      gender: "Male",
-      totalDays: 130,
-      daysMissed: 5,
-      totalGrossEarnings: 12000,
-      totalNetEarnings: 7800,
-    },
-    {
-      id: 4,
-      name: "Sarah Williams",
-      gender: "Female",
-      totalDays: 125,
-      daysMissed: 8,
-      totalGrossEarnings: 11500,
-      totalNetEarnings: 7500,
-    },
-    {
-      id: 5,
-      name: "Michael Lee",
-      gender: "Male",
-      totalDays: 128,
-      daysMissed: 7,
-      totalGrossEarnings: 11200,
-      totalNetEarnings: 7300,
-    },
-  ];
-
   useEffect(() => {
     async function fetchData() {
       try {
@@ -73,7 +25,7 @@ export default function EmployerHome() {
             response.json()
           ),
         ]);
-        setAllEmployees(allEmployees);
+        setAllEmployees(allEmployees.employees);
         setTotalEmployees(totalEmployees);
       } catch (error) {
         console.error(error);
@@ -82,7 +34,7 @@ export default function EmployerHome() {
     fetchData();
   }, []);
 
-  console.log(allEmployees, totalEmployees);
+  console.log(allEmployees);
 
   return (
     <section className="employer-container">
@@ -163,35 +115,40 @@ export default function EmployerHome() {
             <span className="client-home-emps-number">Employee no.</span>
             <span className="client-home-emps-name">Employee Name</span>
             <span className="client-home-emps-sex">Gender</span>
-            <span className="client-home-emps-days">Total days</span>
-            <span className="client-home-emps-missed">Days Missed</span>
+            <span className="client-home-emps-days">Days Present</span>
+            <span className="client-home-emps-missed">Days Absent</span>
             <span className="client-home-emps-gross">Total gross Earnings</span>
             <span className="client-home-emps-net">Total Net Earnings</span>
           </div>
-
-          {users.map((user) => {
-            return (
+          {allEmployees ? (
+            allEmployees.map((user) => (
               <Link
-                key={user.id}
+                key={user.employee_number}
                 to={`/employer/home/employees/${user.id}`}
                 className="client-home-emps-child"
               >
-                <span className="client-home-emps-number">{user.id}</span>
+                <span className="client-home-emps-number">
+                  {user.employee_number}
+                </span>
                 <span className="client-home-emps-name">{user.name}</span>
                 <span className="client-home-emps-sex">{user.gender}</span>
-                <span className="client-home-emps-days">{user.totalDays}</span>
+                <span className="client-home-emps-days">
+                  {user.total_present_days}
+                </span>
                 <span className="client-home-emps-missed">
-                  {user.daysMissed}
+                  {user.total_absent_days}
                 </span>
                 <span className="client-home-emps-gross">
-                  {user.totalGrossEarnings}
+                  {user.total_gross_pay}
                 </span>
                 <span className="client-home-emps-net">
-                  {user.totalNetEarnings}
+                  {user.total_net_pay}
                 </span>
               </Link>
-            );
-          })}
+            ))
+          ) : (
+            <p>Loading ...</p>
+          )}
         </div>
       </section>
     </section>
