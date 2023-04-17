@@ -12,14 +12,20 @@ import logo from "../../../Assets/logoHRTech .jpg";
 
 export default function EmployerMoney() {
   let [departments, setDepartments] = useState();
-  let [payslip, setPayslip] = useState();
+  let [payslips, setPayslips] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/employers/1")
-      .then((res) => res.json())
-      .then((data) => {
-        setDepartments(data.departments);
+    Promise.all([
+      fetch("http://localhost:3000/employers/1"),
+      fetch(`http://localhost:3000/employer_payslip/1`),
+    ])
+      .then(([employersRes, payslipsRes]) =>
+        Promise.all([employersRes.json(), payslipsRes.json()])
+      )
+      .then(([employersData, payslipsData]) => {
+        setDepartments(employersData.departments);
+        setPayslips(payslipsData.payslips);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -28,14 +34,14 @@ export default function EmployerMoney() {
       });
   }, []);
 
-  console.log(departments);
+  console.log(payslips);
 
   function handlePayslips() {
     const doc = new jsPDF("landscape");
     doc.setFontSize(10);
     let currentPage = 1;
 
-    for (const data of payslip) {
+    for (const data of payslips) {
       let headers = [
         "Basic Pay",
         ...data.week_one,
