@@ -1,61 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./employees.css";
+
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
 import RatingGraph from "../../../Components/charts/rating";
-import Payslip from "../../../Components/finance/payslip";
-
-const users = [
-  {
-    id: 1,
-    name: "Enock Mokua",
-    gender: "Male",
-    totalDays: 123,
-    daysMissed: 9,
-    totalGrossEarnings: 10900,
-    totalNetEarnings: 7000,
-  },
-  {
-    id: 2,
-    name: "Jane Doe",
-    gender: "Female",
-    totalDays: 120,
-    daysMissed: 10,
-    totalGrossEarnings: 10500,
-    totalNetEarnings: 6800,
-  },
-  {
-    id: 3,
-    name: "Bob Johnson",
-    gender: "Male",
-    totalDays: 130,
-    daysMissed: 5,
-    totalGrossEarnings: 12000,
-    totalNetEarnings: 7800,
-  },
-  {
-    id: 4,
-    name: "Sarah Williams",
-    gender: "Female",
-    totalDays: 125,
-    daysMissed: 8,
-    totalGrossEarnings: 11500,
-    totalNetEarnings: 7500,
-  },
-  {
-    id: 5,
-    name: "Michael Lee",
-    gender: "Male",
-    totalDays: 128,
-    daysMissed: 7,
-    totalGrossEarnings: 11200,
-    totalNetEarnings: 7300,
-  },
-];
 
 export default function EmployerEmployee() {
+  let [rating, setRating] = useState();
   let { id } = useParams();
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const [data] = await Promise.all([
+          fetch(`http://localhost:3000/rating/${id}`).then((response) =>
+            response.json()
+          ),
+        ]);
+        setRating(data.average_rating);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, [id]);
+
+  console.log(rating);
 
   function handlePayslips() {
     console.log("Payslips for all pay periods");

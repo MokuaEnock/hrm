@@ -34,7 +34,7 @@ export default function EmployerHome() {
     fetchData();
   }, []);
 
-  console.log(allEmployees);
+  console.log(totalEmployees);
 
   return (
     <section className="employer-container">
