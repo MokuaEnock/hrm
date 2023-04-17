@@ -34,8 +34,6 @@ export default function EmployerMoney() {
       });
   }, []);
 
-  console.log(payslips);
-
   function handlePayslips() {
     const doc = new jsPDF("landscape");
     doc.setFontSize(10);
@@ -165,7 +163,7 @@ export default function EmployerMoney() {
               <h3>Download data Sheets</h3>
               <button onClick={handlePayslips}>Payslips</button>
               <button onClick={handleAttendance}>Attendance Sheets</button>
-              <button onClick={handleAttendance}>Payroll</button>
+              {/* <button onClick={handleAttendance}>Payroll</button> */}
             </span>
           </aside>
         </section>

@@ -24,6 +24,12 @@ export default function EmployerDept() {
       .then((data) => {
         setPayslip(data.payslips);
       });
+    fetch(`http://localhost:3000//download_pay/${id}`)
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res);
+        console.log(res);
+      });
   }, [id]);
 
   function handleSetPay(e) {
@@ -64,13 +70,6 @@ export default function EmployerDept() {
   };
 
   const handlePay = () => {
-    fetch(`http://localhost:3000//download_pay/${id}`)
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res);
-        console.log(res);
-      });
-
     const headers = [
       "Payroll No",
       "NAME",
