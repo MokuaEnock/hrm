@@ -3,6 +3,9 @@ import "./dept.css";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import * as XLSX from "xlsx";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
+import JSZip from "jszip";
 
 import EmployerNav from "../components/Nav";
 import EmployerHead from "../components/head";
@@ -97,8 +100,85 @@ export default function EmployerDept() {
     }
   };
 
+  
+
   function handleSlips() {
-    console.log("slips");
+    const zip = new JSZip();
+    const promises = [];
+
+    for (const data of payslipData) {
+      const doc = new jsPDF("landscape");
+      doc.setFontSize(10);
+
+      // add logo at top right corner
+      doc.addImage(logo, "PNG", 220, -15, 70, 70);
+
+      // employer heading
+      doc.text(
+        "Transatal consulting limited P.o Box 12-40200 Nairobi PaySlip week 45-46",
+        5,
+        10
+      );
+
+      doc.text(`Pay No: ${data.pay_no}`, 10, 17);
+      doc.text(data.name, 10, 24);
+
+      // add employee data table
+      doc.autoTable({
+        startY: 30,
+        head: [headers],
+        body: [
+          [
+            data.name,
+            data.bank_account,
+            data.bank_code,
+            data.branch_code,
+            data.bank_name,
+            data.amount,
+          ],
+        ],
+        theme: "grid",
+        styles: {
+          textColor: [0, 0, 0],
+          fillColor: [255, 255, 255],
+          cellPadding: 2,
+        },
+      });
+
+      // add employee data table 2
+      doc.autoTable({
+        startY: 70,
+        head: [headers2],
+        body: [
+          [
+            data.name,
+            data.bank_account,
+            data.bank_code,
+            data.branch_code,
+            data.bank_name,
+            data.amount,
+          ],
+        ],
+        theme: "grid",
+        styles: {
+          textColor: [0, 0, 0],
+          fillColor: [255, 255, 255],
+          cellPadding: 2,
+        },
+        headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0] },
+        tableLineWidth: 0,
+      });
+
+      const pdfData = doc.output("arraybuffer");
+      zip.file(`${data.name}.pdf`, pdfData);
+      promises.push(pdfData);
+    }
+
+    Promise.all(promises).then(() => {
+      zip.generateAsync({ type: "blob" }).then((content) => {
+        saveAs(content, "payslips.zip");
+      });
+    });
   }
 
   return (
