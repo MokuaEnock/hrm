@@ -11,8 +11,10 @@ export default function RatingGraph({ rating, deficit }) {
       {
         label: "My First Dataset",
         data: [rating, deficit],
-        backgroundColor: ["#FF6384", "#36A2EB"],
+        backgroundColor: [ "#f8fafc", "#024751",],
         hoverOffset: 4,
+        border: false,
+        borderWidth: 0,
       },
     ],
   };
@@ -33,6 +35,9 @@ export default function RatingGraph({ rating, deficit }) {
                 }`;
               },
             },
+          },
+          legend: {
+            display: false,
           },
         }}
       />
