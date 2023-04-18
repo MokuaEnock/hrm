@@ -66,7 +66,11 @@ export default function EmployerDept() {
   };
 
   const handleStartDateChange = (event) => {
+    const selectedDate = new Date(event.target.value);
+    const endDate = new Date(selectedDate.getTime() + 13 * 24 * 60 * 60 * 1000); // add 13 days
+
     setStartDate(event.target.value);
+    setEndDate(endDate.toISOString().slice(0, 10)); // convert date to ISO string format and set endDate state
   };
 
   const handlePay = () => {
@@ -242,11 +246,7 @@ export default function EmployerDept() {
 
                 <label>
                   <p>End date</p>
-                  <input
-                    type="date"
-                    value={endDate}
-                    onChange={handleEndDateChange}
-                  />
+                  <input type="date" value={endDate} readOnly />
                 </label>
               </span>
 
