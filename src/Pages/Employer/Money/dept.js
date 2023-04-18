@@ -61,9 +61,9 @@ export default function EmployerDept() {
       });
   }
 
-  const handleEndDateChange = (event) => {
-    setEndDate(event.target.value);
-  };
+  // const handleEndDateChange = (event) => {
+  //   setEndDate(event.target.value);
+  // };
 
   const handleStartDateChange = (event) => {
     const selectedDate = new Date(event.target.value);
